@@ -13,6 +13,6 @@ onMounted(() => {
 <template>
   <section>
     <Card v-for="post in posts || []" :key="post._id" :post="post" />
-    <Welcome v-if="!posts?.length" />
+    <Intro v-if="!posts?.length" />
   </section>
 </template>
