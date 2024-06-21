@@ -2,12 +2,13 @@
   "name": "layneharris-sanity",
   "version": "1.0.0",
   "private": true,
-  "scripts": {
-    "dev": "pnpm -r dev",
-    "format": "prettier --cache --write .",
-    "build": "pnpm build",
-    "prepare": "nuxt prepare"
-  },
+"scripts": {
+  "dev": "pnpm -r dev",
+  "format": "prettier --cache --write .",
+  "build": "nuxt build",
+  "prepare": "nuxt prepare",
+  "postinstall": "pnpm exec nuxt prepare"
+},
   "prettier": {
     "plugins": [
       "prettier-plugin-packagejson"
