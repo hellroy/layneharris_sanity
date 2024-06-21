@@ -13,9 +13,9 @@ const { data: post } = await useSanityQuery<Post>(query, {
 <template>
   <section v-if="post" class="post">
     <img
-      v-if="post.mainImage"
+      v-if="post.coverImage"
       class="post__cover"
-      :src="$urlFor(post.mainImage).width(1920).url()"
+      :src="($urlFor(post.coverImage).width(1920).url())"
       alt="Cover image"
     />
     <div v-else class="post__cover--none" />

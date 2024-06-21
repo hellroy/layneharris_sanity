@@ -8,9 +8,9 @@ defineProps<{ post: Post }>()
 <template>
   <NuxtLink class="card" :to="`/post/${post.slug.current}`">
     <img
-      v-if="post.mainImage"
+      v-if="post.coverImage"
       class="card__cover"
-      :src="urlFor(post.mainImage).width(500).height(300).url()"
+      :src="urlFor(post.coverImage).width(500).height(300).url()"
       alt="Cover image"
     />
 

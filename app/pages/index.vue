@@ -3,6 +3,11 @@ import { type Post } from '~/types/Post'
 
 const query = groq`*[ _type == "post" && defined(slug.current) ] | order(_createdAt desc)`
 const { data: posts } = await useSanityQuery<Post[]>(query)
+
+onMounted(() => {
+  console.log('posts:', posts);
+  console.log("loaded");
+})
 </script>
 
 <template>
