@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "pnpm -r dev",
     "format": "prettier --cache --write .",
-    "build": "nuxt build",
+    "build": "nuxi generate",
     "prepare": "nuxt prepare",
     "postinstall": "pnpm exec nuxt prepare"
   },

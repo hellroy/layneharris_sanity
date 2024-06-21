@@ -26,13 +26,4 @@ export default defineNuxtConfig({
       stega: true,
     },
   },
-  postcss: {
-    plugins: {
-      autoprefixer: {},
-      'postcss-nested': {},
-    },
-  },
-  generate: {
-    dir: 'dist' // Specifies the output directory
-  },
 })
