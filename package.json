@@ -10,7 +10,7 @@
     "postinstall": "pnpm exec nuxt prepare"
   },
   "dependencies": {
-    "nuxt": "^3.0.0"  // Ensure this line is present
+    "nuxt": "^3.0.0" 
   },
   "prettier": {
     "plugins": [
