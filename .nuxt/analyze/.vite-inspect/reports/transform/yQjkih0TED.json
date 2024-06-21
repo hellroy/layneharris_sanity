@@ -3,197 +3,197 @@
   "transforms": [
     {
       "name": "vite:load-fallback",
-      "result": "\nimport { updateAppConfig } from '#app/config'\nimport { defuFn } from 'defu'\n\nconst inlineConfig = {\n  \"nuxt\": {\n    \"buildId\": \"d3b68f67-0805-4c88-ac28-fd12ab663d92\"\n  }\n}\n\n// Vite - webpack is handled directly in #app/config\nif (import.meta.hot) {\n  import.meta.hot.accept((newModule) => {\n    updateAppConfig(newModule.default)\n  })\n}\n\n\n\nexport default /*@__PURE__*/ defuFn(inlineConfig)\n",
-      "start": 1718988903041,
-      "end": 1718988903300,
+      "result": "\nimport { updateAppConfig } from '#app/config'\nimport { defuFn } from 'defu'\n\nconst inlineConfig = {\n  \"nuxt\": {\n    \"buildId\": \"27b1eced-b7e2-4af8-8fbe-f42f4f791d2d\"\n  }\n}\n\n// Vite - webpack is handled directly in #app/config\nif (import.meta.hot) {\n  import.meta.hot.accept((newModule) => {\n    updateAppConfig(newModule.default)\n  })\n}\n\n\n\nexport default /*@__PURE__*/ defuFn(inlineConfig)\n",
+      "start": 1718993193451,
+      "end": 1718993193535,
       "sourcemaps": null
     },
     {
       "name": "nuxt:layer-aliasing",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "pre"
     },
     {
       "name": "nuxt:server-devonly:transform",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "pre"
     },
     {
       "name": "nuxt:client-fallback-auto-id",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "pre"
     },
     {
       "name": "vite:css",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "vite:esbuild",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "vite:json",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "vite:worker",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "vite:vue",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "vite:vue-jsx",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "nuxt:remove-plugin-metadata",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "nuxt:chunk-error",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "nuxt:components:imports",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "replace",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "ssr-styles",
-      "start": 1718988903300,
-      "end": 1718988903300,
+      "start": 1718993193535,
+      "end": 1718993193535,
       "order": "normal"
     },
     {
       "name": "vite:define",
-      "result": "import { updateAppConfig } from \"#app/config\";\nimport { defuFn } from \"defu\";\nconst inlineConfig = {\n  \"nuxt\": {\n    \"buildId\": \"d3b68f67-0805-4c88-ac28-fd12ab663d92\"\n  }\n};\nif (void 0) {\n  (void 0).accept((newModule) => {\n    updateAppConfig(newModule.default);\n  });\n}\nexport default /* @__PURE__ */ defuFn(inlineConfig);\n",
-      "start": 1718988903300,
-      "end": 1718988903360,
+      "result": "import { updateAppConfig } from \"#app/config\";\nimport { defuFn } from \"defu\";\nconst inlineConfig = {\n  \"nuxt\": {\n    \"buildId\": \"27b1eced-b7e2-4af8-8fbe-f42f4f791d2d\"\n  }\n};\nif (void 0) {\n  (void 0).accept((newModule) => {\n    updateAppConfig(newModule.default);\n  });\n}\nexport default /* @__PURE__ */ defuFn(inlineConfig);\n",
+      "start": 1718993193535,
+      "end": 1718993193542,
       "order": "normal",
       "sourcemaps": null
     },
     {
       "name": "vite:css-post",
-      "start": 1718988903360,
-      "end": 1718988903360,
+      "start": 1718993193542,
+      "end": 1718993193542,
       "order": "normal"
     },
     {
       "name": "vite:build-html",
-      "start": 1718988903360,
-      "end": 1718988903360,
+      "start": 1718993193542,
+      "end": 1718993193542,
       "order": "normal"
     },
     {
       "name": "vite:worker-import-meta-url",
-      "start": 1718988903360,
-      "end": 1718988903360,
+      "start": 1718993193542,
+      "end": 1718993193542,
       "order": "normal"
     },
     {
       "name": "vite:asset-import-meta-url",
-      "start": 1718988903360,
-      "end": 1718988903360,
+      "start": 1718993193542,
+      "end": 1718993193542,
       "order": "normal"
     },
     {
       "name": "commonjs",
-      "start": 1718988903360,
-      "end": 1718988903360,
+      "start": 1718993193542,
+      "end": 1718993193542,
       "order": "normal"
     },
     {
       "name": "vite:dynamic-import-vars",
-      "start": 1718988903360,
-      "end": 1718988903360,
+      "start": 1718993193542,
+      "end": 1718993193542,
       "order": "normal"
     },
     {
       "name": "vite:import-glob",
-      "start": 1718988903360,
-      "end": 1718988903360,
+      "start": 1718993193542,
+      "end": 1718993193542,
       "order": "normal"
     },
     {
       "name": "nuxt:composable-keys",
-      "start": 1718988903360,
-      "end": 1718988903360,
+      "start": 1718993193542,
+      "end": 1718993193542,
       "order": "post"
     },
     {
       "name": "nuxt:imports-transform",
-      "start": 1718988903360,
-      "end": 1718988903361,
+      "start": 1718993193542,
+      "end": 1718993193542,
       "order": "post"
     },
     {
       "name": "unctx:transform",
-      "start": 1718988903361,
-      "end": 1718988903361,
+      "start": 1718993193542,
+      "end": 1718993193543,
       "order": "post"
     },
     {
       "name": "nuxt:runtime-paths-dep",
-      "start": 1718988903361,
-      "end": 1718988903361,
+      "start": 1718993193543,
+      "end": 1718993193543,
       "order": "post"
     },
     {
       "name": "nuxt:components-loader",
-      "start": 1718988903361,
-      "end": 1718988903361,
+      "start": 1718993193543,
+      "end": 1718993193543,
       "order": "post"
     },
     {
       "name": "nuxt:tree-shake-composables:transform",
-      "start": 1718988903361,
-      "end": 1718988903361,
+      "start": 1718993193543,
+      "end": 1718993193543,
       "order": "post"
     },
     {
       "name": "vite:build-import-analysis",
-      "start": 1718988903361,
-      "end": 1718988903361,
+      "start": 1718993193543,
+      "end": 1718993193543,
       "order": "normal"
     },
     {
       "name": "vite:reporter",
-      "start": 1718988903361,
-      "end": 1718988903361,
+      "start": 1718993193543,
+      "end": 1718993193543,
       "order": "normal"
     }
   ]
