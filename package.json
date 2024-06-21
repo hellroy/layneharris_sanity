@@ -1,10 +1,11 @@
 {
-  "name": "sanity-template-nuxt-clean",
+  "name": "layneharris-sanity",
   "version": "1.0.0",
   "private": true,
   "scripts": {
     "dev": "pnpm -r dev",
-    "format": "prettier --cache --write ."
+    "format": "prettier --cache --write .",
+    "build": "pnpm build"
   },
   "prettier": {
     "plugins": [
