@@ -5,7 +5,8 @@
   "scripts": {
     "dev": "pnpm -r dev",
     "format": "prettier --cache --write .",
-    "build": "pnpm build"
+    "build": "pnpm build",
+    "prepare": "nuxt prepare"
   },
   "prettier": {
     "plugins": [
