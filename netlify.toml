@@ -7,3 +7,4 @@
 
 [build.environment]
   NPM_FLAGS = "--registry=https://registry.npmjs.org/"
+  NETLIFY_USE_PNPM = "true"

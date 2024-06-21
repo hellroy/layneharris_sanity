@@ -32,4 +32,7 @@ export default defineNuxtConfig({
       'postcss-nested': {},
     },
   },
+  generate: {
+    dir: 'dist' // Specifies the output directory
+  },
 })
