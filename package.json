@@ -1,25 +1,30 @@
 {
-  "name": "app",
+  "name": "layneharris-sanity",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "nuxt build",
-    "dev": "nuxt dev",
-    "generate": "nuxt generate",
-    "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
-  },
-  "devDependencies": {
-    "@sanity/types": "^3.36.2",
-    "@types/node": "^18.17.14",
-    "nuxt": "^3.11.1",
-    "postcss": "^8.4.38",
-    "postcss-nested": "^6.0.1"
+    "dev": "nuxi dev",
+    "format": "prettier --cache --write .",
+    "build": "nuxi generate",
+    "generate:routes": "node generate-routes.js",
+    "prepare": "nuxi prepare",
+    "postinstall": "nuxi prepare"
   },
   "dependencies": {
-    "@nuxtjs/google-fonts": "^3.0.0",
-    "@nuxtjs/sanity": "^1.10.1",
-    "@portabletext/vue": "^1.0.7",
-    "@sanity/image-url": "^1.0.2",
-    "groq": "^3.9.1"
+    "nuxt": "^3.0.0",
+    "@nuxtjs/sanity": "^1.0.0",
+    "@nuxtjs/google-fonts": "^1.0.0",
+    "node-fetch": "^3.0.0"
+  },
+  "devDependencies": {
+    "prettier": "3.2.5",
+    "prettier-plugin-packagejson": "2.4.14",
+    "eslint": "^8.20.0",  // Ensure this is a compatible version
+    "eslint-plugin-vue": "^8.0.0",
+    "eslint-config-prettier": "^8.1.0"
+  },
+  "packageManager": "pnpm@8.15.4",
+  "resolutions": {
+    "eslint": "^8.20.0"
   }
 }
