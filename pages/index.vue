@@ -1,18 +1,27 @@
-<script setup lang="ts">
-import { type Post } from './types/Post'
+<script setup>
+import groq from 'groq'; // Import the 'groq' function
+//import { useSanityQuery } from '~/composables/useSanity';
 
-const query = groq`*[ _type == "post" && defined(slug.current) ] | order(_createdAt desc)`
-const { data: posts } = await useSanityQuery<Post[]>(query)
+// Define separate queries for posts and projects
+const postsQuery = groq`*[ _type == "post" && defined(slug.current) ] | order(_createdAt desc)`;
+const projectsQuery = groq`*[ _type == "project" && defined(slug.current) ] | order(_createdAt desc)`;
 
-onMounted(() => {
-  console.log('posts:', posts);
-  console.log("loaded");
-})
+// Fetch posts
+const { data: posts } = await useSanityQuery(postsQuery);
+
+// Fetch projects
+const { data: projects } = await useSanityQuery(projectsQuery);
+
 </script>
 
 <template>
-  <section>
+  <section class="w-[50%] m-auto py-8" >
+    <div>Blog posts</div>
     <Card v-for="post in posts || []" :key="post._id" :post="post" />
-    <Intro v-if="!posts?.length" />
   </section>
+  <section class="w-[50%] m-auto py-8" >
+    <div>Projects posts</div>
+    <Project v-for="project in projects || []" :key="project._id" :project="project" />
+  </section>
+  <Intro v-if="!posts?.length" />
 </template>

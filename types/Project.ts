@@ -1,13 +1,10 @@
-import type { PortableTextBlock, Slug, ImageAsset } from "@sanity/types";
-
+// types/Project.ts
 export interface Project {
   _id: string;
-  _type: "post";
+  title: string;
+  slug: {
+    current: string;
+  };
   _createdAt: string;
-  title?: string;
-  slug: Slug;
-  excerpt?: string;
-  duration?: Date;
-  coverImage?: ImageAsset;
-  body: PortableTextBlock[];
+  // Add other fields as needed
 }
