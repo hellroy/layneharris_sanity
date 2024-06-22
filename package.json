@@ -17,7 +17,8 @@
     "@sanity/image-url": "^1.0.2",
     "consola": "^3.2.3",
     "node-fetch": "^3.0.0",
-    "nuxt": "^3.0.0"
+    "nuxt": "^3.0.0",
+    "react-is": "^18.3.1"
   },
   "devDependencies": {
     "eslint": "^8.20.0",
