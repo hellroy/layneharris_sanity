@@ -1,5 +1,12 @@
-// https://nuxt.com/docs/api/configuration/nuxt-config
+import { defineNuxtConfig } from 'nuxt/config'
+
 export default defineNuxtConfig({
+  hooks: {
+    'nitro:config'(nitro) {
+      const EventEmitter = require('events')
+      EventEmitter.defaultMaxListeners = 20 // Increase the limit to 20 or higher if needed
+    }
+  },
   modules: [
     '@nuxtjs/sanity',
   ],

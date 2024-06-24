@@ -1,10 +1,10 @@
 import { defineNuxtPlugin, useRuntimeConfig } from '#app'
-import sanityClient from '@sanity/client'
+import { createClient } from '@sanity/client'
 
 export default defineNuxtPlugin(() => {
   const config = useRuntimeConfig().public.sanity
 
-  const client = sanityClient({
+  const client = createClient({
     projectId: config.projectId,
     dataset: config.dataset,
     useCdn: config.useCdn,

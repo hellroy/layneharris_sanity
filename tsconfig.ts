@@ -1,19 +1,27 @@
 {
   "compilerOptions": {
-    "target": "es2017",
+    "target": "esnext",
     "module": "esnext",
     "moduleResolution": "node",
+    "lib": ["esnext", "esnext.asynciterable", "dom"],
     "esModuleInterop": true,
-    "strict": true,
-    "jsx": "preserve",
     "allowJs": true,
     "skipLibCheck": true,
-    "types": ["@types/node"],
-    "baseUrl": ".",
-    "paths": {
-      "~/*": ["./*"],
-      "@/*": ["./*"]
-    }
+    "strict": false,
+    "forceConsistentCasingInFileNames": true,
+    "noEmit": true,
+    "jsx": "preserve",
+    "resolveJsonModule": true,
+    "types": [
+      "@types/node",
+      "@nuxtjs/sanity"
+    ]
   },
-  "exclude": ["node_modules", ".nuxt", "dist"]
+  "include": [
+    "nuxt.config.ts",
+    "plugins/**/*.ts",
+    "components/**/*.vue",
+    "pages/**/*.vue",
+    "layouts/**/*.vue"
+  ]
 }
