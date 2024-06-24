@@ -1,8 +1,0 @@
-[build]
-  command = "pnpm run build"
-  publish = "dist"
-
-[build.environment]
-  NODE_OPTIONS = "--max_old_space_size=4096"
-  NODE_ENV = "production"
-  NODE_VERSION = "18.17.0"
