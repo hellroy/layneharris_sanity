@@ -33,7 +33,7 @@ importers:
         specifier: ^3.47.1
         version: 3.47.1
       netlify-cms-app:
-        specifier: ^2.15.67
+        specifier: ^2.15.72
         version: 2.15.72(@types/hoist-non-react-statics@3.3.5)(@types/node@20.14.8)(@types/react@18.3.3)(graphql@15.9.0)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
       node-fetch:
         specifier: ^3.3.2
@@ -7729,7 +7729,7 @@ snapshots:
   '@types/vfile@3.0.2':
     dependencies:
       '@types/node': 20.14.8
-      '@types/unist': 2.0.10
+      '@types/unist': 3.0.2
       '@types/vfile-message': 2.0.0
 
   '@types/zen-observable@0.8.7': {}
