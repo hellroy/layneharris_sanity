@@ -33,7 +33,7 @@
   
   // Define the GROQ query
   const searchQuery = `
-    *[_type in ["post", "project", "navType"] && (
+    *[_type in ["post", "project", "page"] && (
       title match $searchTerm ||
       description match $searchTerm ||
       body match $searchTerm ||
@@ -68,12 +68,17 @@
   }
   
   const getLink = (result) => {
-    if (result.url) return result.url
-    if (result.slug && result.slug.current) {
-      return `/${result._type}/${result.slug.current}`
+  if (result.url) return result.url
+  if (result.slug && result.slug.current) {
+    if (result._type === 'page') {
+      return `/${result.slug.current}`
     }
-    return '#'
+    return `/${result._type}/${result.slug.current}`
   }
+  return '#'
+}
+
+
   </script>
   
   <style scoped>
