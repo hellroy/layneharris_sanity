@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "nuxi dev",
-    "build": "nuxi build --debug",
+    "build": "nuxi generate",
     "generate:routes": "node generate-routes.js",
     "prepare": "nuxi prepare",
     "postinstall": "nuxi prepare",
