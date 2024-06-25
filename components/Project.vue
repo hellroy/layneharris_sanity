@@ -15,7 +15,7 @@ defineProps({
   >
     <img
       v-if="project.coverImage"
-      class="w-full h-56 object-cover"
+      class="aspect-square object-cover rounded-lg max-w-[300px]"
       :src="urlFor(project.coverImage).width(500).height(300).url()"
       alt="Cover image"
     />

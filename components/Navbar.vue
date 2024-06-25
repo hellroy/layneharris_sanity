@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full bg-gray-200 py-4 relative z-10">
+  <nav class="w-full bg-gray-200 relative z-10">
     <ul class="flex justify-around list-none p-0 m-0">
       <li v-for="item in sortedNavItems" :key="item._id" class="relative group">
         <NuxtLink :to="getLink(item)" class="no-underline text-gray-800 p-2.5 block">{{ item.name }}</NuxtLink>
