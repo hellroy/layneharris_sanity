@@ -2,9 +2,9 @@
   <nav class="w-full bg-layneDarkBlue z-10 opacity-[.8] fixed ">
     <ul class="flex justify-around items-center list-none p-0 m-0 h-16">
 
-      <li v-for="item in sortedNavItems" :key="item._id" class="relative group">
-        <NuxtLink :to="getLink(item)" class="no-underline text-layneYellow p-2.5 block uppercase font-silkscreen">{{ item.name }}</NuxtLink>
-        <ul v-if="item.children && item.children.length" class="absolute top-full left-0 bg-layneBlue list-none p-0 m-0 hidden group-hover:block z-20">
+      <li v-for="item in sortedNavItems" :key="item._id" class="relative group hover:text-laynePink ">
+        <NuxtLink :to="getLink(item)" class="no-underline text-layneYellow p-2.5 block uppercase font-silkscreen drop-shadow-[0_5px_5px_rgba(230,245,39,.8)] hover:text-laynePink ">{{ item.name }}</NuxtLink>
+        <ul v-if="item.children && item.children.length" class="absolute top-full left-0 bg-layneBlue list-none p-0 m-0 hidden group-hover:block hover:text-laynePink z-20">
           <li v-for="subItem in item.children" :key="subItem._id" class="relative">
             <NuxtLink :to="getLink(subItem)" class="no-underline p-2.5 block  text-layneYellow font-silkscreen">{{ subItem.name }}</NuxtLink>
           </li>

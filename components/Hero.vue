@@ -1,6 +1,6 @@
 <template>
     <div class="m-auto w-full text-center h-[100vh] -mt-24" v-if="hero">
-      <div class="bg-image h-full" :style="{ backgroundImage: 'url(' + urlFor(hero.bgImage).url() + ')' }">
+      <div class="bg-image h-full stripe-4">
         <img :src="urlFor(hero.heroImage).url()" alt="Hero Image" class="font-bold text-3xl py-4 h-full m-auto pt-24 -rotate-3" />
       </div>
     </div>
@@ -44,5 +44,26 @@
     background-size: cover;
     background-position: center;
   }
+
+  .stripe-4 {
+  background: repeating-linear-gradient(
+    -55deg,
+    #4cc9f0,
+    #f72585 10px,
+    #4cc9f0 20px,
+    #f72585 20px
+  );
+  background-size: 48.9px 1080px; /* Adjust the size to get the desired thickness of the stripes */
+  animation: moveStripes 60s linear infinite; /* Adjust the timing as needed */
+}
+
+@keyframes moveStripes {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: 100vw 0vw; /* Moves by the width of one full cycle */
+  }
+}
   </style>
   

@@ -9,16 +9,16 @@
           class="flex flex-col p-12 relative text-layneYellow no-underline first:rounded-t last:rounded-b "
           :to="`/post/${post.slug.current}`">
           <img v-if="post.coverImage"
-            class="card__cover w-full h-[250px] object-cover md:min-w-[400px] md:max-w-[400px] md:max-h-[250px] m-auto "
+            class="card__cover w-full h-[250px] object-cover md:min-w-[400px] md:max-w-[400px] md:max-h-[250px] m-auto rounded-lg drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
             :src="urlFor(post.coverImage).width(500).height(300).url()" alt="Cover image" />
           <div v-else
             class="card__cover--none w-full h-[250px] bg-layneYellow md:min-w-[400px] md:max-w-[400px] md:max-h-[250px] " />
           <div class="card__container my-0 mx-2 md:mx-4 flex-grow">
             <h3
-              class="card__title font-headings text-4xl leading-8 tracking-tight mt-2 mb-1 md:mt-4 hover:opacity-80 transition-opacity duration-200 text-center">
+              class="card__title font-headings text-4xl leading-8 tracking-tight mt-2 mb-1 md:mt-4 hover:opacity-80 transition-opacity duration-200 text-center drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
               {{ post.title }}</h3>
             <p class="card__excerpt font-serif font-normal text-lg leading-7 mt-0 text-center">{{ post.excerpt }}</p>
-            <p class="card__date font-sans font-semibold text-xs mt-4 text-center">{{ formatDate(post._createdAt) }}</p>
+            <p class="card__date font-sans font-semibold text-xs mt-4 text-center drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">{{ formatDate(post._createdAt) }}</p>
           </div>
         </NuxtLink>
       </swiper-slide>
