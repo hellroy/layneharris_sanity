@@ -44,9 +44,9 @@ export default defineComponent({
       }`
       try {
         navItems.value = await $sanityClient.fetch(query)
-        console.log('Fetched Nav Items:', navItems.value) // Debug log
+       // console.log('Fetched Nav Items:', navItems.value) // Debug log
       } catch (error) {
-        console.error('Error fetching nav items:', error)
+       // console.error('Error fetching nav items:', error)
       }
     }
 
@@ -55,7 +55,7 @@ export default defineComponent({
     })
 
     const getLink = (item) => {
-      console.log('Processing item:', item) // Debug log
+     // console.log('Processing item:', item) // Debug log
       if (item.url) return item.url
       if (item.slug && item.slug.current) {
         return `/${item.slug.current}`
