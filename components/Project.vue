@@ -15,16 +15,23 @@ defineProps({
   >
     <img
       v-if="project.coverImage"
-      class="project-card aspect-square object-cover rounded-lg group hover:rotate-[-3deg] transition-transform duration-300"
+      class="project-card aspect-square object-cover rounded-lg group hover:rotate-[-3deg] transition-transform duration-300 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
       :src="urlFor(project.coverImage).width(500).height(300).url()"
       alt="Cover image"
     />
     <div v-else class="w-full h-56 bg-black"></div>
 
-    <div class="mt-2">
-      <h3 class="project-card-title font-headings text-4xl mb-1 text-layneYellow bg-layneDarkBlue rotate-3 py-3 -mt-4 group-hover:rotate-[-3deg] transition-transform duration-300">
+    <div class="mt-2 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
+      <h3 class="project-card-title font-headings text-4xl mb-1 text-layneYellow gradient rotate-3 py-3 -mt-4 group-hover:rotate-[-3deg] transition-transform duration-300  ">
         {{ project.title }}
       </h3>
     </div>
   </NuxtLink>
 </template>
+
+<style scoped>
+
+.gradient {
+  background: linear-gradient(-45deg, #f72585, #7209b7, #3a0ca3, #000000);
+}
+</style>

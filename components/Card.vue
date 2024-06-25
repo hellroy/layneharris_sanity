@@ -1,5 +1,5 @@
 <template>
-  <div class="carousel-container overflow-visible gradient-border p-1">
+  <div class="carousel-container overflow-visible gradient-border p-1 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
     <swiper :modules="[Autoplay, Pagination, Navigation]" :slides-per-view="1" :space-between="10" :autoplay="{
       delay: 10000,
       disableOnInteraction: false,
