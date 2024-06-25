@@ -1,16 +1,17 @@
 <template>
-  <nav class="w-full bg-gray-200 relative z-10">
-    <ul class="flex justify-around list-none p-0 m-0">
+  <nav class="w-full bg-layneDarkBlue z-10 opacity-[.8] fixed ">
+    <ul class="flex justify-around items-center list-none p-0 m-0 h-16">
+
       <li v-for="item in sortedNavItems" :key="item._id" class="relative group">
-        <NuxtLink :to="getLink(item)" class="no-underline text-gray-800 p-2.5 block">{{ item.name }}</NuxtLink>
-        <ul v-if="item.children && item.children.length" class="absolute top-full left-0 bg-gray-200 list-none p-0 m-0 hidden group-hover:block z-20">
+        <NuxtLink :to="getLink(item)" class="no-underline text-layneYellow p-2.5 block uppercase font-silkscreen">{{ item.name }}</NuxtLink>
+        <ul v-if="item.children && item.children.length" class="absolute top-full left-0 bg-layneBlue list-none p-0 m-0 hidden group-hover:block z-20">
           <li v-for="subItem in item.children" :key="subItem._id" class="relative">
-            <NuxtLink :to="getLink(subItem)" class="no-underline text-gray-800 p-2.5 block hover:bg-gray-300">{{ subItem.name }}</NuxtLink>
+            <NuxtLink :to="getLink(subItem)" class="no-underline p-2.5 block  text-layneYellow font-silkscreen">{{ subItem.name }}</NuxtLink>
           </li>
         </ul>
       </li>
+      <Search />
     </ul>
-    <div class="fixed bottom-0 w-full bg-white border border-gray-300 p-2.5 shadow-md text-center text-gray-800" v-if="description">{{ description }}</div>
   </nav>
 </template>
 

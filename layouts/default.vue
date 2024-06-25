@@ -2,13 +2,12 @@
   <div class="flex flex-col min-h-screen">
     <!-- Navbar and Search components -->
     <Navbar />
-    <Search />
+
     
     <!-- Main content -->
-    <main class="flex-grow">
+    <main class="flex-grow mt-24">
       <NuxtPage />
     </main>
-    
     <!-- Footer -->
     <Footer />
   </div>

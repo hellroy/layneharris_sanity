@@ -1,6 +1,6 @@
 <template>
-    <div class="relative w-full">
-      <div class="relative">
+    <div class="relative w-[15vw] py-2">
+      <div class="relative font-silkscreen">
         <input
           v-model="searchTerm"
           @input="onSearch"
