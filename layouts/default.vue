@@ -1,18 +1,23 @@
 <template>
-    <div>
-      <Navbar />
-      <Search />
+  <div class="flex flex-col min-h-screen">
+    <!-- Navbar and Search components -->
+    <Navbar />
+    <Search />
+    
+    <!-- Main content -->
+    <main class="flex-grow">
       <NuxtPage />
-    </div>
-  </template>
-  
-  <script>
-  import Navbar from '~/components/Navbar.vue'
-  
-  export default {
-    components: {
-      Navbar
-    }
-  }
-  </script>
-  
+    </main>
+    
+    <!-- Footer -->
+    <Footer />
+  </div>
+</template>
+
+
+
+<style scoped>
+.flex-grow {
+  flex-grow: 1;
+}
+</style>

@@ -11,7 +11,7 @@ const { data: post } = await useSanityQuery(query, {
 </script>
 
 <template>
-  <section v-if="post" class="post w-full my-4 md:my-16">
+  <section v-if="post" class="post w-full my-4 md:my-16 py-4">
     <img
       v-if="post.coverImage"
       class="post__cover w-full h-52 object-cover md:w-[750px] md:h-[380px]"

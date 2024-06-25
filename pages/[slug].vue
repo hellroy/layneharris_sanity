@@ -1,6 +1,6 @@
 <template>
-    <div v-if="page">
-      <h1>{{ page.title }}</h1>
+    <div class="m-auto w-full text-center" v-if="page">
+      <div class="font-bold text-3xl py-4">{{ page.title }}</div>
       <PortableText :value="page.content" />
     </div>
     <div v-else>

@@ -1,23 +1,23 @@
 <template>
-    <div class="search-container">
-      <div class="search-input-wrapper">
+    <div class="relative w-full">
+      <div class="relative">
         <input
           v-model="searchTerm"
           @input="onSearch"
           @keyup.enter="onSearch"
           type="text"
           placeholder="Search..."
-          class="search-input"
+          class="w-full px-2 py-2 pr-8 border border-gray-300 rounded-md focus:outline-none"
         />
-        <span class="search-icon">
+        <span class="absolute right-2 top-1/2 transform -translate-y-1/2 text-gray-500">
           <i class="fas fa-search"></i>
         </span>
       </div>
-      <ul v-if="results.length" class="search-results">
-        <li v-for="result in results" :key="result._id" class="search-result">
+      <ul v-if="results.length" class="absolute w-full bg-white shadow-lg max-h-72 overflow-y-auto z-10">
+        <li v-for="result in results" :key="result._id" class="py-2 border-b border-gray-200 last:border-none">
           <NuxtLink
             :to="getLink(result)"
-            class="search-result-link"
+            class="block px-4 text-gray-800 hover:bg-gray-100"
             @click="clearSearch"
           >
             {{ result.title || result.name }}
@@ -68,72 +68,14 @@
   }
   
   const getLink = (result) => {
-  if (result.url) return result.url
-  if (result.slug && result.slug.current) {
-    if (result._type === 'page') {
-      return `/${result.slug.current}`
+    if (result.url) return result.url
+    if (result.slug && result.slug.current) {
+      if (result._type === 'page') {
+        return `/${result.slug.current}`
+      }
+      return `/${result._type}/${result.slug.current}`
     }
-    return `/${result._type}/${result.slug.current}`
+    return '#'
   }
-  return '#'
-}
-
-
   </script>
-  
-  <style scoped>
-  @import '@fortawesome/fontawesome-free/css/all.css';
-  
-  .search-container {
-    position: relative;
-    width: 100%;
-  }
-  
-  .search-input-wrapper {
-    position: relative;
-  }
-  
-  .search-input {
-    width: 100%;
-    padding: 0.5rem 2rem 0.5rem 0.5rem;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    box-sizing: border-box;
-  }
-  
-  .search-icon {
-    position: absolute;
-    right: 0.5rem;
-    top: 50%;
-    transform: translateY(-50%);
-    color: #aaa;
-  }
-  
-  .search-results {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    position: absolute;
-    width: 100%;
-    background: #fff;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    max-height: 300px;
-    overflow-y: auto;
-    z-index: 1000;
-  }
-  
-  .search-result {
-    padding: 0.5rem;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .search-result:last-child {
-    border-bottom: none;
-  }
-  
-  .search-result-link {
-    text-decoration: none;
-    color: #333;
-  }
-  </style>
   

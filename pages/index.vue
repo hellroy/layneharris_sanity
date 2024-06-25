@@ -17,11 +17,10 @@ const { data: projects } = await useSanityQuery(projectsQuery);
 <template>
   <section class="w-[50%] m-auto py-8" >
     <div>Blog posts</div>
-    <Card v-for="post in posts || []" :key="post._id" :post="post" />
+    <Card/>
   </section>
   <section class="w-[50%] m-auto py-8" >
     <div>Projects posts</div>
     <Project v-for="project in projects || []" :key="project._id" :project="project" />
   </section>
-  <Intro v-if="!posts?.length" />
 </template>
