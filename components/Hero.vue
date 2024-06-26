@@ -48,21 +48,22 @@
   .stripe-4 {
   background: repeating-linear-gradient(
     -55deg,
-    #4cc9f0,
-    #f72585 10px,
-    #4cc9f0 20px,
+    #f72585,
+    #f72585 100px,
+    #4cc9f0 0px,
+    #4cc9f0 200px,
     #f72585 20px
   );
-  background-size: 48.9px 1080px; /* Adjust the size to get the desired thickness of the stripes */
-  animation: moveStripes 60s linear infinite; /* Adjust the timing as needed */
+  background-size: 48.9px 1080px; 
+  animation: moveStripes 60s linear infinite; 
 }
 
 @keyframes moveStripes {
   from {
-    background-position: 0 0;
+      background-position: 0 0;
   }
   to {
-    background-position: 100vw 0vw; /* Moves by the width of one full cycle */
+    background-position: 100vw 0vw; 
   }
 }
   </style>
