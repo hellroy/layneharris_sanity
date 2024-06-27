@@ -1,15 +1,19 @@
 <template>
-  <Hero/>
-  <section class="w-[50%] m-auto py-8 relative" >
-    <div class="font-silkscreen text-layneYellow uppercase py-2 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">Blog</div>
-    <Card/>
+  <section>
+    <Hero />
   </section>
-  <section class="w-[50%] m-auto py-8" >
+  <div class="starburst starburst--both">
+  <section class="w-[60%] m-auto py-8 relative">
+    <div class="font-silkscreen text-layneYellow uppercase py-2 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">Blog</div>
+    <Card />
+  </section>
+  <section class="w-[60%] m-auto py-8">
     <div class="font-silkscreen uppercase text-layneYellow drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">Projects</div>
     <div class="projects-container grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-0">
-    <Project v-for="project in projects || []" :key="project._id" :project="project" />
-  </div>
+      <Project v-for="project in projects || []" :key="project._id" :project="project" />
+    </div>
   </section>
+  </div>
 </template>
 
 <script setup>
@@ -27,5 +31,3 @@ const { data: posts } = await useSanityQuery(postsQuery);
 const { data: projects } = await useSanityQuery(projectsQuery);
 
 </script>
-
-

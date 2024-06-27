@@ -10,7 +10,7 @@ defineProps({
 
 <template>
   <NuxtLink
-    class="card flex flex-col p-3 text-black no-underline m-auto text-center"
+    class="card flex flex-col p-3 no-underline m-auto text-center"
     :to="`/project/${project.slug.current}`"
   >
   <div class="group">

@@ -1,5 +1,5 @@
 <template>
-    <div class="m-auto w-full text-center h-[100vh] -mt-24" v-if="hero">
+    <div class="m-auto w-full text-center h-[100vh] -mt-24 -z-20" v-if="hero">
       <div class="bg-image h-full stripe-4">
         <img :src="urlFor(hero.heroImage).url()" alt="Hero Image" class="font-bold text-3xl py-4 h-full m-auto pt-24 -rotate-3" />
       </div>
