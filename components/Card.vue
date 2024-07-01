@@ -1,18 +1,18 @@
 <template>
-  <div class="carousel-container overflow-visible gradient-border p-1 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
+  <div class="carousel-container overflow-visible gradient-border max-h-[50vh] p-1 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
     <swiper :modules="[Autoplay, Pagination, Navigation]" :slides-per-view="1" :space-between="10" :autoplay="{
       delay: 10000,
       disableOnInteraction: false,
     }" pagination navigation>
       <swiper-slide v-for="post in posts" :key="post._id">
         <NuxtLink
-          class="flex flex-col p-12 relative text-layneYellow no-underline first:rounded-t last:rounded-b "
+          class="flex flex-col p-4 py-8 md:p-12 relative text-layneYellow no-underline first:rounded-t last:rounded-b "
           :to="`/post/${post.slug.current}`">
           <img v-if="post.coverImage"
-            class="card__cover w-full h-[250px] object-cover md:min-w-[400px] md:max-w-[400px] md:max-h-[250px] m-auto rounded-lg drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
+            class="card__cover w-full md:h-[250px] xl:h-full object-cover md:min-w-[400px] md:max-w-[400px] md:max-h-[250px] xl:max-w-full xl:max-h-full m-auto rounded-lg drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
             :src="urlFor(post.coverImage).width(500).height(300).url()" alt="Cover image" />
           <div v-else
-            class="card__cover--none w-full h-[250px] bg-layneYellow md:min-w-[400px] md:max-w-[400px] md:max-h-[250px] " />
+            class="card__cover--none w-full md:h-[250px] bg-layneYellow md:min-w-[400px] md:max-w-[400px] md:max-h-[250px] " />
           <div class="card__container my-0 mx-2 md:mx-4 flex-grow">
             <h3
               class="card__title font-headings text-4xl leading-8 tracking-tight mt-2 mb-1 md:mt-4 hover:opacity-80 transition-opacity duration-200 text-center drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">

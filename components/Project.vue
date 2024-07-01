@@ -10,7 +10,7 @@ defineProps({
 
 <template>
   <NuxtLink
-    class="card flex flex-col p-3 no-underline m-auto text-center"
+    class="card flex flex-col p-3 no-underline m-auto text-center "
     :to="`/project/${project.slug.current}`"
   >
   <div class="group">
@@ -20,7 +20,7 @@ defineProps({
       :src="urlFor(project.coverImage).width(500).height(300).url()"
       alt="Cover image"
     />
-    <div v-else class="w-full h-56 bg-black"></div>
+    <div v-else class="w-full h-56"></div>
 
     <div class="mt-2 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
       <h3 class="group-hover:rotate-[-1deg] transition-transform duration-300 font-headings text-4xl mb-1 text-layneYellow gradient rotate-3 py-3 -mt-4  ">
