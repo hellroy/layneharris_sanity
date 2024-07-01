@@ -20,11 +20,11 @@ const { data: post } = await useSanityQuery(query, {
       alt="Cover image"
     />
     <div v-else class="post__cover--none w-full h-52 md:w-[750px] md:h-[380px]" />
-    <div class="post__container px-6 md:px-12">
+    <div class="post__container px-6 md:px-12 w-[75%] m-auto">
       <h1 class="post__title text-3xl md:text-5xl  font-headings text-layneYellow leading-tight mt-4 md:mt-8 mb-4 md:mb-6">{{ post.title }}</h1>
-      <p class="post__excerpt font-serif text-xl md:text-2xl leading-snug mt-0">{{ post.excerpt }}</p>
+      <p class="post__excerpt font-sans text-white text-xl md:text-2xl leading-snug mt-0">{{ post.excerpt }}</p>
       <p class="post__date font-sans text-layneBlue font-semibold text-xs md:text-lg mt-4">{{ formatDate(post._createdAt) }}</p>
-      <div v-if="post.body" class="post__content font-serif text-lg md:text-xl leading-relaxed mt-6 md:mt-12">
+      <div v-if="post.body" class="post__content font-sans text-white text-lg md:text-xl leading-relaxed mt-6 md:mt-12">
         <PortableText :value="post.body" />
       </div>
     </div>
