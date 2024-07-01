@@ -12,7 +12,7 @@ const { data: project } = await useSanityQuery(query, {
 
 <template>
   <section v-if="project" class="project w-full my-4 md:my-16">
-    <div class="m-auto w-[70%]">
+    <div class="m-auto w-[75%]">
     <img
       v-if="project.coverImage"
       class="project__cover w-full h-52 object-cover md:w-[750px] md:h-[380px] m-auto rounded-lg drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
@@ -24,8 +24,8 @@ const { data: project } = await useSanityQuery(query, {
 
       <h1 class="project__title text-3xl md:text-5xl font-headings text-layneYellow text-center leading-tight mt-4 md:mt-8 mb-4 md:mb-6">{{ project.title }}</h1>
       <p class="project__excerpt font-serif text-xl md:text-2xl leading-snug mt-0">{{ project.excerpt }}</p>
-      <p class="project__date font-sans font-semibold text-xs md:text-lg mt-4 text-layneBlue">{{ formatDate(project._createdAt) }}</p>
-      <div v-if="project.body" class="project__content font-serif text-white text-lg md:text-xl leading-relaxed mt-6 md:mt-12">
+      <p class="project__date font-sans font-semibold text-center text-xs md:text-lg mt-4 text-layneBlue">{{ formatDate(project.date) }}</p>
+      <div v-if="project.body" class="project__content font-sans text-white text-lg md:text-xl leading-relaxed mt-6 md:mt-12">
         <PortableText :value="project.body" />
       </div>
     </div>
@@ -36,6 +36,10 @@ const { data: project } = await useSanityQuery(query, {
 <style scoped>
 .project__content blockquote {
   @apply border-l-4 border-black pl-6 ml-8;
+}
+
+h3 {
+  @apply text-4xl text-layneYellow !important;
 }
 
 .project__content a {
