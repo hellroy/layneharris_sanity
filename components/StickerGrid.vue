@@ -3,7 +3,7 @@
       <div 
         v-for="(sticker, index) in stickers" 
         :key="sticker._id" 
-        class="sticker-item brightness-75 blur-sm hover:scale-110 transition-transform duration-300 ease-in-out"
+        class="sticker-item brightness-75 hover:scale-110 transition-transform duration-300 ease-in-out"
       >
         <img 
           :src="sticker.sticker || 'https://via.placeholder.com/150'" 
