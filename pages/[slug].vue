@@ -1,7 +1,9 @@
 <template>
-    <div class="m-auto w-full text-center text-white font-sans" v-if="page">
-      <div class="font-headings text-layneYellow text-3xl py-4">{{ page.title }}</div>
+    <div class="m-auto text-center text-white font-sans w-[75%]" v-if="page">
+      <div class="font-headings text-layneYellow text-4xl py-4">{{ page.title }}</div>
+      <div class="text-left">
       <PortableText :value="page.content"/>
+    </div>
     </div>
     <div v-else>
       <p>Loading...</p>
