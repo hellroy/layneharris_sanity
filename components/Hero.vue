@@ -1,13 +1,11 @@
 <template>
   <div class="m-auto md:w-full text-center md:h-[100vh] -mt-24 -z-20" v-if="hero">
     <div class="h-full stripe-4 relative flex flex-col md:flex-row justify-center items-center">
-      <div class="relative flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 brightness-75 blur-sm">
-        <!-- <img :src="urlFor(hero.heroImage).url()" :alt="hero.heroImage.alt" class="h-full m-auto -rotate-2 max-w-[80%]" />
-        <img :src="urlFor(hero.heroImage2).url()" :alt="hero.heroImage2.alt" class="h-full m-auto md:pt-24 rotate-6 max-w-[80%]" /> -->
+      <div class="relative flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pointer-events-none">
         <StickerGrid />
       </div>
-      <div class="absolute inset-0 flex justify-center items-center z-1">
-        <div class="gravity font-cheeVariable text-layneYellow text-[12vh] lg:text-[30vh] drop-shadow-hard text-left">
+      <div class="absolute md:inset-0 flex md:justify-center items-center z-1">
+        <div class="gravity font-cheeVariable text-layneYellow text-[12vh] lg:text-[30vh] drop-shadow-hard text-left pointer-events-none">
           <div class="mt-[5vw] -mb-[10vw]">LAYNE</div>
           <div class="-mb-[10vw]">HARRIS</div>
           <div class="text-white">.COM</div>
