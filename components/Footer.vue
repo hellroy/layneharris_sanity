@@ -24,4 +24,8 @@
   border-radius: 16px;
   font-family: "SF Pro Text", Helvetica, sans-serif;
 }
+
+.libutton:hover {
+  background-color: #0077b5;
+}
 </style>

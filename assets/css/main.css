@@ -7,6 +7,11 @@
     --layneYellow: #ffff3f;
     --laynePink: #f72585;
   }
+
+  html {
+	scroll-behavior: smooth;
+  }
+  
   
 
 body {

@@ -4,13 +4,16 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/sanity'
   ],
+
   css: ['~/assets/css/tailwind.css', '~/assets/css/main.css'],
+
   postcss: {
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
     },
   },
+
   app: {
     head: {
       title: "Layne Harris's Personal Website",
@@ -25,7 +28,6 @@ export default defineNuxtConfig({
         { name: 'twitter:title', content: 'Layne Harris\'s Personal Website' },
         { name: 'twitter:description', content: 'Layne Harris, a creative technologist in Portland, Maine.' },
         { name: 'twitter:image', content: '/images/snapshot.jpg' }
-        // Add more meta tags here
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
@@ -33,6 +35,7 @@ export default defineNuxtConfig({
       ]
     }
   },
+
   runtimeConfig: {
     sanity: {
       projectId: process.env.NUXT_SANITY_PROJECT_ID,
@@ -54,8 +57,11 @@ export default defineNuxtConfig({
       },
     },
   },
+
   plugins: [
     '~/plugins/sanity.js',
     { src: '~/plugins/google-analytics.js', mode: 'client' }
   ],
+
+  compatibilityDate: '2024-07-02',
 })
