@@ -2,7 +2,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   modules: [
-    '@nuxtjs/sanity',
+    '@nuxtjs/sanity'
   ],
   css: ['~/assets/css/tailwind.css', '~/assets/css/main.css'],
   postcss: {
@@ -10,6 +10,28 @@ export default defineNuxtConfig({
       tailwindcss: {},
       autoprefixer: {},
     },
+  },
+  app: {
+    head: {
+      title: "Layne Harris's Personal Website",
+      meta: [
+        { name: 'description', content: 'Layne Harris, a creative technologist in Portland, Maine.' },
+        { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+        { property: 'og:title', content: 'Layne Harris\'s Personal Website' },
+        { property: 'og:description', content: 'Layne Harris, a creative technologist in Portland, Maine.' },
+        { property: 'og:image', content: '/images/snapshot.jpg' },
+        { property: 'og:url', content: 'https://layneharris.com' },
+        { name: 'twitter:card', content: '/images/snapshot.jpg' },
+        { name: 'twitter:title', content: 'Layne Harris\'s Personal Website' },
+        { name: 'twitter:description', content: 'Layne Harris, a creative technologist in Portland, Maine.' },
+        { name: 'twitter:image', content: '/images/snapshot.jpg' }
+        // Add more meta tags here
+      ],
+      link: [
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        // Add more link tags here
+      ]
+    }
   },
   runtimeConfig: {
     sanity: {
