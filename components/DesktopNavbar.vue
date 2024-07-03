@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full bg-layneDarkBlue z-10 opacity-[.8] fixed">
+  <nav class="w-full bg-layneDarkBlue z-10 opacity-[.8] fixed border-b-layneMedBlue border-b-2">
     <ul class="flex justify-around items-center list-none p-0 m-0 h-16">
       <NavbarItem
         v-for="item in sortedNavItems"

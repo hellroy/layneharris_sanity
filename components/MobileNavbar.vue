@@ -1,6 +1,5 @@
 <template>
-  <nav class="w-full bg-layneDarkBlue z-10 fixed opacity-[.9] font-silkscreen text-[1.5em]">
-
+  <nav class="w-full bg-layneDarkBlue z-10 fixed opacity-[.9] font-silkscreen text-[1.5em] border-b-layneMedBlue border-b-2">
     <div class="flex justify-between items-center p-4">
       <button @click="toggleMenu" class="hamburger text-layneYellow">
         ☰

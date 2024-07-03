@@ -32,11 +32,14 @@ module.exports = {
         customRed: '#ef4444',
         customGreen: '#10b981',
         customYellow: '#f59e0b',
+        layneGrad: 'linear-gradient(to right, rgb(134, 239, 172), rgb(59, 130, 246), rgb(147, 51, 234))',
+
       },
       fontFamily: {
         silkscreen: ['Silkscreen', 'sans-serif'],
         headings: ['Bebas Neue', 'sans-serif'],
         cheeVariable: ['cheee-variable', 'sans-serif'],
+        synthemesc: ["synthemesc", 'sans-serif'],
       },
     },
   },
