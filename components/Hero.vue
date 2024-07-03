@@ -1,11 +1,11 @@
 <template>
   <div class="m-auto md:w-full text-center md:h-[100vh] -mt-24 -z-20 border-b-layneYellow border-b-2" v-if="hero">
-    <div class="h-full stripe-4 relative flex flex-col md:flex-row justify-center items-center">
-      <div class="relative flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 pointer-events-none">
-        <StickerGrid />
+    <div class="h-full stripe-4 relative flex flex-col md:flex-row justify-center items-center" >
+      <div class="relative flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+        <StickerGrid/>
       </div>
-      <div class="absolute md:inset-0 flex md:justify-center md:items-center z-1">
-        <div class="gravity font-synthemesc text-layneYellow text-[12vh] md:text-[20vh] lg:text-[30vh]  drop-shadow-hard text-left -mt-[80vw] md:-mt-0">
+      <div class="absolute md:inset-0 flex md:justify-center md:items-center z-1 pointer-events-none">
+        <div class="gravity font-synthemesc text-layneYellow text-[12vh] md:text-[20vh] lg:text-[30vh]  drop-shadow-hard text-left -mt-[80vw] md:-mt-0 "  >
           <div class="mt-[5vw] -mb-[10vw]">LAYNE</div>
           <div class="-mb-[10vw]">HARRIS</div>
           <div class="text-white">.COM</div>
@@ -22,7 +22,6 @@
 import { ref, onMounted } from 'vue'
 import groq from 'groq'
 import { useNuxtApp } from '#app'
-import { urlFor } from '~/utils'
 
 const hero = ref(null)
 const { $sanityClient } = useNuxtApp()
@@ -45,6 +44,7 @@ const fetchHero = async () => {
 onMounted(() => {
   fetchHero()
 })
+
 </script>
 
 <style scoped>

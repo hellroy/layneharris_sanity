@@ -18,6 +18,4 @@
   flex-grow: 1;
 }
 
-
-
 </style>

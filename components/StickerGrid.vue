@@ -1,9 +1,9 @@
 <template>
-    <div class="grid grid-cols-4 gap-0 mt-12 overflow-hidden">
+    <div class="grid grid-cols-4 gap-0 mt-12 w-full overflow-visible">
       <div 
         v-for="(sticker, index) in stickers" 
         :key="sticker._id" 
-        class="sticker-item brightness-75 hover:scale-110 transition-transform duration-300 ease-in-out"
+        class="sticker-item brightness-75 hover:scale-110 hover:brightness-100 transition-transform duration-300 ease-in-out hover:rotate-3"
       >
         <img 
           :src="sticker.sticker || 'https://via.placeholder.com/150'" 
