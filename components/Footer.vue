@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-laynePurple text-layneYellow p-4 ">
+    <footer class="bg-laynePurple text-layneYellow p-4 border-t-2 border-t-layneMedBlue">
         <div class="container mx-auto text-center drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
             &copy; 2024 Layne Harris 
             <a class="libutton m-auto mt-4 bg-laynePink" href="https://www.linkedin.com/comm/mynetwork/discovery-see-all?usecase=PEOPLE_FOLLOWS&followMember=layneharris" target="_blank">Follow on LinkedIn</a>
