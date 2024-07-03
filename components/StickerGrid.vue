@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-4 gap-0 mt-12 w-full overflow-visible">
+  <div class="grid grid-cols-4 gap-0 w-full overflow-visible">
     <div 
       v-for="(sticker, index) in stickers" 
       :key="sticker._id" 

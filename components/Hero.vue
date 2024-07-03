@@ -1,7 +1,7 @@
 <template>
   <div class="m-auto md:w-full text-center md:h-[100vh] -mt-24 -z-20 border-b-layneYellow border-b-2" v-if="hero">
     <div class="h-full stripe-4 relative flex flex-col md:flex-row justify-center items-center" >
-      <div class="relative flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4">
+      <div class="relative flex flex-col md:mt-[12vh] md:flex-row space-y-4 md:space-y-0 md:space-x-4">
         <StickerGrid/>
       </div>
       <div class="absolute md:inset-0 flex md:justify-center md:items-center z-1 pointer-events-none">
