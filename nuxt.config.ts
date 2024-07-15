@@ -5,10 +5,6 @@ export default defineNuxtConfig({
     '@nuxtjs/sanity'
   ],
 
-  build: {
-    transpile: ['hookable'],
-  },
-
   css: ['~/assets/css/tailwind.css', '~/assets/css/main.css'],
 
   postcss: {
