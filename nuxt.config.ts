@@ -6,7 +6,6 @@ export default defineNuxtConfig({
   ],
 
   build: {
-    // Ensure compatibility with CommonJS modules
     transpile: ['hookable'],
   },
 
@@ -36,7 +35,6 @@ export default defineNuxtConfig({
       ],
       link: [
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
-        // Add more link tags here
       ]
     }
   },
@@ -67,6 +65,18 @@ export default defineNuxtConfig({
     '~/plugins/sanity.js',
     { src: '~/plugins/google-analytics.js', mode: 'client' }
   ],
+
+  nitro: {
+    prerender: {
+      routes: [
+        '/', // List of routes to prerender
+      ],
+      ignore: [
+        // Ignore routes that are problematic
+      ],
+      crawlLinks: true,
+    },
+  },
 
   compatibilityDate: '2024-07-02',
 })
