@@ -62,17 +62,5 @@ export default defineNuxtConfig({
     { src: '~/plugins/google-analytics.js', mode: 'client' }
   ],
 
-  nitro: {
-    prerender: {
-      routes: [
-        '/', // List of routes to prerender
-      ],
-      ignore: [
-        // Ignore routes that are problematic
-      ],
-      crawlLinks: true,
-    },
-  },
-
   compatibilityDate: '2024-07-02',
 })
