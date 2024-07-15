@@ -99,3 +99,6 @@ bower_components/
 **/._*
 
 # End of macOS Finder generated files
+
+# Local Netlify folder
+.netlify

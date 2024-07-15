@@ -1,6 +1,5 @@
 <template>
   <div class="flex flex-col min-h-screen">
-    <LoadingSpinner v-if="isLoading" />
     <!-- Navbar and Search components -->
     <Navbar />
     <!-- Main content -->
@@ -11,21 +10,6 @@
     <Footer />
   </div>
 </template>
-
-<script setup>
-import { useNuxtApp } from 'nuxt/app'
-import { computed, watch } from 'vue'
-import LoadingSpinner from '~/components/LoadingSpinner.vue'
-
-const nuxtApp = useNuxtApp()
-const isLoading = computed(() => nuxtApp.$isLoading?.value ?? false)
-
-watch(isLoading, (newVal) => {
-  console.log('Loading state changed:', newVal)
-})
-
-console.log('isLoading (initial):', isLoading.value)
-</script>
 
 <style scoped>
 .flex-grow {

@@ -65,7 +65,6 @@ export default defineNuxtConfig({
 
   plugins: [
     '~/plugins/sanity.js',
-    '~/plugins/loading.client.ts',
     { src: '~/plugins/google-analytics.js', mode: 'client' }
   ],
 
