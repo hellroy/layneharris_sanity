@@ -6,24 +6,25 @@
     }" pagination navigation>
       <swiper-slide v-for="post in posts" :key="post._id">
         <NuxtLink
-          class="flex flex-col p-4 py-8 md:p-12 relative text-layneYellow no-underline first:rounded-t last:rounded-b "
+          class="flex flex-col md:flex-row p-4 py-8 md:p-12 relative text-layneYellow no-underline first:rounded-t last:rounded-b"
           :to="`/post/${post.slug.current}`">
           <img v-if="post.coverImage"
-            class="card__cover  border-t border-t-teal-200 w-full md:h-[250px] xl:h-full object-cover md:min-w-[400px] md:max-w-[400px] md:max-h-[250px] xl:max-w-full xl:max-h-full m-auto rounded-lg drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
+            class="card__cover border-t border-t-teal-200 w-full xl:w-auto md:h-[250px] xl:h-full object-cover m-auto rounded-lg drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
             :src="urlFor(post.coverImage).width(500).height(300).url()" alt="Cover image" />
           <div v-else
-            class="card__cover--none w-full md:h-[350px] bg-layneYellow md:min-w-[400px] md:max-w-[400px] md:max-h-[250px] " />
-          <div class="card__container my-0 mx-2 md:mx-4 flex-grow">
-            <h3
-              class="card__title font-headings text-4xl md:text-[4em] leading-8 tracking-tight mt-2 mb-1 md:mt-4 hover:opacity-80 transition-opacity duration-200 text-center drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
-              {{ post.title }}</h3>
-            <p class="card__date font-sans font-semibold text-xs mt-4 text-center drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">{{ formatDate(post._createdAt) }}</p>
+            class="card__cover--none w-full md:h-[350px] md:min-w-[400px] md:max-w-[400px] md:max-h-[250px]" />
+          <div class="card__container my-0 mx-2 md:mx-4 flex-grow flex flex-col justify-center">
+            <div
+              class="card__title font-headings text-4xl md:text-[4vw] xl:text-[4vw] mt-2 mb-1 md:mt-4 hover:opacity-80 transition-opacity duration-200 text-center md:text-left drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
+              {{ post.title }}</div>
+            <p class="card__date font-sans font-semibold text-xs mt-8 text-center md:text-left drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">{{ formatDate(post._createdAt) }}</p>
           </div>
         </NuxtLink>
       </swiper-slide>
     </swiper>
   </div>
 </template>
+
 
 <script setup>
 import { ref, onMounted } from 'vue'
@@ -78,15 +79,15 @@ onMounted(() => {
 }
 
 @keyframes animatedgradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .carousel-container {
@@ -123,10 +124,15 @@ onMounted(() => {
   }
 }
 
-.swiper-2{
+.swiper-2 {
   --swiper-pagination-color: #f72585;
   --swiper-navigation-color: #f72585;
 }
 
-
+.card__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-left: 20px; /* Adjust padding as needed */
+}
 </style>
