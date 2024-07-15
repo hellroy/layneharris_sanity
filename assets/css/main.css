@@ -8,6 +8,12 @@
     --laynePink: #f72585;
   }
 
+  html, body { 
+	height: 100%;
+	margin: 0;
+	overflow: auto;
+  }
+
   html {
 	scroll-behavior: smooth;
   }

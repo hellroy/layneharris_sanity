@@ -11,7 +11,7 @@ const { data: project } = await useSanityQuery(query, {
 </script>
 
 <template>
-  <section v-if="project" class="project w-full my-4 md:my-16">
+  <section v-if="project" class="project w-full my-4 mt-24 md:mt-0 md:my-16">
     <div class="m-auto w-[75%]">
     <img
       v-if="project.coverImage"

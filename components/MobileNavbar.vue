@@ -1,23 +1,24 @@
 <template>
-  <nav class="w-full bg-layneDarkBlue z-10 fixed opacity-[.9] font-silkscreen text-[1.5em] border-b-layneMedBlue border-b-2">
+
+  <nav class="w-full bg-layneDarkBlue z-10 fixed opacity-[.9] font-silkscreen text-[1.5em] border-b-layneMedBlue border-b-2 ">
     <div class="flex justify-between items-center p-4">
-      <button @click="toggleMenu" class="hamburger text-layneYellow">
+      <button @click="toggleMenu" class="hamburger text-layneBlue">
         ☰
       </button>
     </div>
 
-    <div v-if="menuOpen" class="bg-layneDarkBlue z-20 opacity-90 h-screen w-screen">
+    <div v-if="menuOpen" class="bg-layneDarkBlue z-20 opacity-90 h-screen w-screen text-center transition-all text-layneYellow">
       <div class="w-full mt-auto">
           <Search class="w-full px-2" />
         </div>
-      <ul class="flex flex-col items-start list-none p-4 m-0 w-full">
+      <ul class="flex flex-col items-start list-none m-0 w-full">
         <li v-for="item in sortedNavItems" :key="item._id" class="nav-item w-full">
           <div
             @click="handleClick(item)"
             :class="['menu-item', getItemClass(item.type), { 'active': isActive(item), 'has-children': item.children && item.children.length }]"
           >
             <span v-if="!item.slug">{{ item.name }}</span>
-            <NuxtLink v-else :to="getLink(item)" @click.native="closeMenu" :class="{ 'active': isActive(item) }">{{ item.name }}</NuxtLink>
+            <NuxtLink v-else :to="getLink(item)" @click="closeMenu" :class="{ 'active': isActive(item) }">{{ item.name }}</NuxtLink>
           </div>
           <ul v-if="item.children && item.children.length" class="submenu w-full">
             <li v-for="subItem in item.children" :key="subItem._id" class="submenu-item w-full">
@@ -26,19 +27,19 @@
                 :class="['menu-item', getItemClass(subItem.type), { 'active': isActive(subItem), 'has-children': subItem.children && subItem.children.length }]"
               >
                 <span v-if="!subItem.slug">{{ subItem.name }}</span>
-                <NuxtLink v-else :to="getLink(subItem)" @click.native="closeMenu" :class="{ 'active': isActive(subItem) }">{{ subItem.name }}</NuxtLink>
+                <NuxtLink v-else :to="getLink(subItem)" @click="closeMenu" :class="{ 'active': isActive(subItem) }">{{ subItem.name }}</NuxtLink>
               </div>
               <ul v-if="subItem.children && subItem.children.length" class="sub-submenu w-full">
-                <li v-for="subSubItem in subItem.children" :key="subSubItem._id" class="sub-submenu-item w-full text-laynePink">
-                  <NuxtLink :to="getLink(subSubItem)" @click.native="closeMenu" :class="{ 'active': isActive(subSubItem) }">{{ subSubItem.name }}</NuxtLink>
+                <li v-for="subSubItem in subItem.children" :key="subSubItem._id" class="sub-submenu-item w-full text-layneYellow">
+                  <NuxtLink :to="getLink(subSubItem)" @click="closeMenu" :class="{ 'active': isActive(subSubItem) }">{{ subSubItem.name }}</NuxtLink>
                 </li>
               </ul>
             </li>
           </ul>
         </li>
-
       </ul>
     </div>
+
   </nav>
 </template>
 
@@ -174,6 +175,9 @@ export default defineComponent({
 </script>
 
 <style scoped>
+a {
+  color: var(--layneYellow);
+}
 .hamburger {
   font-size: 24px;
   background: none;
@@ -184,7 +188,7 @@ export default defineComponent({
 .menu-item {
   padding: 10px;
   cursor: pointer;
-  color: var(--layneYellow);
+  font-size: 1.75em;
 }
 
 .menu-item.active {
@@ -194,16 +198,13 @@ export default defineComponent({
 .submenu,
 .sub-submenu {
   list-style: none;
-  padding-left: 20px;
 }
 
 .submenu-item {
   font-size: 14px;
-  padding: 5px;
 }
 
 .sub-submenu-item {
   font-size: 1rem;
-  padding: 3px;
 }
 </style>

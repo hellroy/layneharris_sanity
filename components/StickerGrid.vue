@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-4 gap-0 w-full overflow-hidden">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-0 w-full overflow-y-visible md:h-screen">
     <div 
       v-for="(sticker, index) in stickers" 
       :key="sticker._id" 
@@ -11,7 +11,7 @@
       <img 
         :src="sticker.sticker || 'https://via.placeholder.com/150'" 
         :alt="sticker.name" 
-        class="max-w-[450px] h-auto"
+        class="max-w-[200px] md:max-w-[450px] h-auto"
         :style="`transform: rotate(${randomRotations[index]}deg)`"
       />
     </div>

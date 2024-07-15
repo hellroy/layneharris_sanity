@@ -14,14 +14,20 @@
     "resolveJsonModule": true,
     "types": [
       "@types/node",
-      "@nuxtjs/sanity"
-    ]
+      "@nuxt/types"
+    ],
+    "baseUrl": ".",
+    "paths": {
+      "#app": [".nuxt/types/app/index.d.ts"],
+      "#build": [".nuxt"]
+    }
   },
   "include": [
     "nuxt.config.ts",
     "plugins/**/*.ts",
     "components/**/*.vue",
     "pages/**/*.vue",
-    "layouts/**/*.vue"
+    "layouts/**/*.vue",
+    ".nuxt/**/*.ts"
   ]
 }

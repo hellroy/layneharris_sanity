@@ -22,8 +22,8 @@ defineProps({
     />
     <div v-else class="w-full h-56"></div>
 
-    <div class="-mt-6 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
-      <h3 class="my-element group-hover:rotate-[-1deg] transition-transform duration-300 text-4xl mb-1 text-layneYellow gradient rotate-2 py-3 border-8 border-r-layneBlue  border-b-layneBlue rounded-lg border-l-layneYellow font-headings ">
+    <div>
+      <h3 class="group-hover:scale-125 transition-transform duration-300 text-4xl mb-1 text-layneYellow py-3 font-headings ">
         {{ project.title }}
       </h3>
     </div>
@@ -72,18 +72,16 @@ defineProps({
   /*======== Static Properties ========*/
   background-blend-mode: soft-light;
   position: relative;
-
-  /*====== Nested Pseudo-Element ======*/
-  &::before {
-    content: "";
-    position: absolute;
-    bottom: 0;
-    top: 0;
-    left: 0;
-    right: 0;
-    border-radius: var(--radius);
-    background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
-  }
 }
 
+.my-element::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  border-radius: var(--radius);
+  background: linear-gradient(calc(var(--angle) + 90deg), hsla(0, 0%, 100%, 0) 40%, hsla(0, 0%, 100%, var(--surface-contrast)));
+}
 </style>
