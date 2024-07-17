@@ -3,7 +3,7 @@
     <div 
       v-for="(sticker, index) in stickers" 
       :key="sticker._id" 
-      class="sticker-item brightness-75 hover:scale-110 hover:brightness-100 transition-transform duration-300 ease-in-out hover:rotate-3 relative cursor-pointer"
+      class="sticker-item brightness-75 hover:scale-110 hover:brightness-100 transition-transform duration-300 ease-in-out hover:rotate-3 md:hover:z-50 relative cursor-pointer"
       @mouseenter="showInfoBox(sticker.description, $event)"
       @mouseleave="hideInfoBox"
       @mousemove="updateInfoBoxPosition"
