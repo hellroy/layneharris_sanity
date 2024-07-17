@@ -2,7 +2,7 @@
   <div class="h-screen">
   <Hero/>
 </div>
-  <div class="starburst starburst--both">
+  <div class="starburst starburst--both p-4">
     <div class="xl:w-[60%] m-auto relative p-4 md:p-0 md:py-8">
       <div
         class="font-silkscreen text-layneYellow text-3xl md:text-[1.5em] text-center md:text-left uppercase py-2 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)] ">
