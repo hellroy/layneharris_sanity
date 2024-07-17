@@ -15,9 +15,9 @@
             class="card__cover--none w-full md:h-[350px] md:min-w-[400px] md:max-w-[400px] md:max-h-[250px]" />
           <div class="card__container my-0 mx-2 md:mx-4 flex-grow flex flex-col justify-center">
             <div
-              class="card__title font-headings text-4xl md:text-[4vw] xl:text-[4vw] mt-2 mb-1 md:mt-4 hover:opacity-80 transition-opacity duration-200 text-center md:text-left drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
+              class="card__title font-headings text-4xl md:text-[4vw] xl:text-[4vw] mt-4 md:mt-4 hover:opacity-80 transition-opacity duration-200 text-center md:text-left drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">
               {{ post.title }}</div>
-            <p class="card__date font-sans font-semibold text-xs mt-8 text-center md:text-left drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">{{ formatDate(post._createdAt) }}</p>
+            <p class="card__date font-sans font-semibold text-xs md:mt-8 text-center md:text-left drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]">{{ formatDate(post._createdAt) }}</p>
           </div>
         </NuxtLink>
       </swiper-slide>
@@ -60,7 +60,6 @@ onMounted(() => {
 <style scoped>
 .gradient-border {
   --borderWidth: 3px;
-  background: #7209b7;
   position: relative;
   border-radius: var(--borderWidth);
 }

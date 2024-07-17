@@ -1,8 +1,8 @@
 <template>
 
-  <nav class="w-full z-10 fixed  font-silkscreen text-[1.5em] backdrop-blur-xl backdrop-saturate-150 backdrop">
+  <nav class="w-full z-10 fixed font-silkscreen text-[1.5em] backdrop-blur-xl backdrop-saturate-150 backdrop">
     <div class="flex justify-between items-center p-4">
-      <button @click="toggleMenu" class="hamburger text-layneBlue">
+      <button @click="toggleMenu" class="hamburger text-layneYellow">
         ☰
       </button>
     </div>

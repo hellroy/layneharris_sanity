@@ -1,11 +1,11 @@
 <template>
-  <div class="m-auto md:w-full text-center md:h-[100vh] -mt-24 -z-20 border-b-layneYellow border-b-2" v-if="hero">
+  <div class="m-auto md:w-full text-center md:h-[100vh] -mt-20 md:-mt-24 -z-20 border-b-layneYellow border-b-2" v-if="hero">
     <div class="h-full stripe-4 relative flex flex-col md:flex-row justify-center items-center" >
       <div class="relative flex flex-col md:mt-[12vh] md:flex-row space-y-4 md:space-y-0 md:space-x-4 py-24">
         <StickerGrid/>
       </div>
       <div class="absolute md:inset-0 flex md:justify-center md:items-center z-1 pointer-events-none">
-        <div class="gravity font-synthemesc text-layneYellow text-[12vh] md:text-[20vh] lg:text-[30vh]  drop-shadow-hard text-left -mt-[80vw] md:-mt-0 "  >
+        <div class="gravity font-synthemesc text-layneYellow text-[12vh] md:text-[20vh] lg:text-[30vh]  drop-shadow-hard text-left -mt-[60vw] -min-mt-20 md:-mt-0 "  >
           <div class="mt-[5vw] -mb-[10vw]">LAYNE</div>
           <div class="-mb-[10vw]">HARRIS</div>
           <div class="text-white">.COM</div>

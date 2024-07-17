@@ -1,5 +1,5 @@
 <template>
-  <div class="grid grid-cols-2 md:grid-cols-4 gap-0 w-full overflow-y-visible md:h-screen">
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-0 w-full overflow-hidden md:h-screen">
     <div 
       v-for="(sticker, index) in stickers" 
       :key="sticker._id" 
@@ -16,16 +16,17 @@
       />
     </div>
   </div>
-  <div v-if="infoBoxVisible" 
+  <div v-if="infoBoxVisible && !isMobile" 
        :style="{ top: `${mouseY}px`, left: `${mouseX}px` }" 
        class="info-box fixed bg-white p-2 border rounded shadow-lg z-50">
     {{ infoBoxContent }}
   </div>
 </template>
 
+
 <script setup>
 import groq from 'groq'; 
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, computed } from 'vue';
 
 // Function to generate a random rotation between -15 and 15 degrees
 const generateRandomRotations = (length) => {
@@ -72,7 +73,17 @@ const updateInfoBoxPosition = (event) => {
   mouseX.value = event.clientX + 10; // Offset to position the box correctly
   mouseY.value = event.clientY + 10; // Offset to position the box correctly
 };
+
+// Detect mobile viewport
+const isMobile = computed(() => {
+  return window.innerWidth <= 768;
+});
+
+window.addEventListener('resize', () => {
+  isMobile.value = window.innerWidth <= 768;
+});
 </script>
+
 
 
 <style scoped>

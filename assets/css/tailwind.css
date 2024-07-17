@@ -11,3 +11,30 @@
 h3 {
     @apply text-3xl font-headings mt-6 mb-1 text-layneYellow !important;
   }
+
+  .scrollable-element {
+    overflow: auto !important;
+    z-index: 1000;
+  }
+
+  /* width */
+::-webkit-scrollbar {
+  width: 5px;
+  margin-top: 24px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  @apply bg-gradient-to-t from-layneYellow via-purple-500 to-layneBlue;
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gradient-to-t from-layneBlue via-purple-500 to-layneYellow cursor-grab;
+}

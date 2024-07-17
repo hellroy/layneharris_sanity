@@ -1,5 +1,5 @@
 <template>
-  <nav class="w-full z-10 opacity-[.8] fixed backdrop-blur-xl backdrop-saturate-150">
+  <nav class="w-full z-10 fixed backdrop-blur-lg backdrop-saturate-150">
     <ul class="flex justify-around items-center list-none p-0 m-0 h-16">
       <NavbarItem
         v-for="item in sortedNavItems"
