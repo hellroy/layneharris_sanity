@@ -1,13 +1,13 @@
 <template>
 
-  <nav class="w-full bg-layneDarkBlue z-10 fixed opacity-[.9] font-silkscreen text-[1.5em] border-b-layneMedBlue border-b-2 ">
+  <nav class="w-full z-10 fixed  font-silkscreen text-[1.5em] backdrop-blur-xl backdrop-saturate-150 backdrop">
     <div class="flex justify-between items-center p-4">
       <button @click="toggleMenu" class="hamburger text-layneBlue">
         ☰
       </button>
     </div>
 
-    <div v-if="menuOpen" class="bg-layneDarkBlue z-20 opacity-90 h-screen w-screen text-center transition-all text-layneYellow">
+    <div v-if="menuOpen" class="backdrop-blur-xl z-20 opacity-90 h-screen w-screen text-center  text-layneYellow">
       <div class="w-full mt-auto">
           <Search class="w-full px-2" />
         </div>
