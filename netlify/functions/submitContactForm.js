@@ -14,7 +14,7 @@ const client = createClient({
 export default eventHandler(async (event) => {
   console.log('Function triggered')
 
-  if (event.req.method !== 'POST') {
+  if (event.node.req.method !== 'POST') {
     console.log('Method not allowed')
     return {
       statusCode: 405,
@@ -46,7 +46,6 @@ export default eventHandler(async (event) => {
     const result = await client.create(doc)
     console.log('Document created:', result)
 
-    // Get nodemailer config from runtimeConfig
     const transporter = nodemailer.createTransport({
       host: 'smtp.gmail.com',
       port: 465,
