@@ -9,6 +9,7 @@ export default defineNuxtPlugin(() => {
     dataset: config.dataset,
     useCdn: config.useCdn,
     apiVersion: config.apiVersion,
+    token: config.contactFormToken,
   })
 
   return {
