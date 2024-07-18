@@ -1,7 +1,7 @@
 import { createClient } from '@sanity/client'
 import nodemailer from 'nodemailer'
 
-export default async function handler(event, context) {
+export async function handler(event, context) {
   const { name, email, message } = JSON.parse(event.body)
   
   if (!name || !email || !message) {
