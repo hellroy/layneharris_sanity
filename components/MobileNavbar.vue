@@ -1,16 +1,15 @@
 <template>
-
-  <nav class="w-full z-10 fixed font-silkscreen text-[1.5em] backdrop-blur-xl backdrop-saturate-150 backdrop">
+  <nav class="z-10 fixed font-silkscreen text-[1.5em] backdrop-blur-xl backdrop-saturate-100 backdrop">
     <div class="flex justify-between items-center p-4">
-      <button @click="toggleMenu" class="hamburger text-layneYellow">
-        ☰
+      <button @click="toggleMenu" class="hamburger text-layneYellow transition ease-in-out delay-150 duration-300">
+        {{ menuOpen ? '✖' : '☰' }}
       </button>
     </div>
 
-    <div v-if="menuOpen" class="backdrop-blur-xl z-20 opacity-90 h-screen w-screen text-center  text-layneYellow">
+    <div v-if="menuOpen" class="backdrop-blur-xl z-20 opacity-90 h-screen w-screen text-center text-layneYellow transition ease-in-out delay-150 duration-300">
       <div class="w-full mt-auto">
-          <Search class="w-full px-2" />
-        </div>
+        <Search class="w-full px-2" />
+      </div>
       <ul class="flex flex-col items-start list-none m-0 w-full">
         <li v-for="item in sortedNavItems" :key="item._id" class="nav-item w-full">
           <div
@@ -39,7 +38,6 @@
         </li>
       </ul>
     </div>
-
   </nav>
 </template>
 
@@ -188,7 +186,8 @@ a {
 .menu-item {
   padding: 10px;
   cursor: pointer;
-  font-size: 1.75em;
+  font-size: 1.35em;
+  filter: drop-shadow(2px 0 0px var(--laynePink));
 }
 
 .menu-item.active {
@@ -201,10 +200,10 @@ a {
 }
 
 .submenu-item {
-  font-size: 14px;
+  font-size: 1em;
 }
 
 .sub-submenu-item {
-  font-size: 1rem;
+  font-size: .8em;
 }
 </style>
