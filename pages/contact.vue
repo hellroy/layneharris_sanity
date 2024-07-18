@@ -25,6 +25,8 @@
 
 <script setup>
 import { ref } from 'vue'
+import { useRouter } from 'vue-router'
+import { useRuntimeConfig } from '#app'
 
 const formData = ref({
     name: '',
@@ -33,10 +35,11 @@ const formData = ref({
 })
 
 const router = useRouter()
+const config = useRuntimeConfig()
 
 const handleSubmit = async () => {
     try {
-        const response = await fetch('/api/submitContactForm', {
+        const response = await fetch(config.public.apiUrl, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
