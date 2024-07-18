@@ -2,7 +2,8 @@ import { defineNuxtConfig } from 'nuxt/config'
 
 export default defineNuxtConfig({
   modules: [
-    '@nuxtjs/sanity'
+    '@nuxtjs/sanity',
+    'nuxt-nodemailer'
   ],
 
   css: ['~/assets/css/tailwind.css', '~/assets/css/main.css'],
@@ -11,6 +12,18 @@ export default defineNuxtConfig({
     plugins: {
       tailwindcss: {},
       autoprefixer: {},
+    },
+  },
+
+  nodemailer: {
+    transport: {
+      host: 'smtp.gmail.com',
+      port: 465,
+      secure: true, // true for 465, false for other ports
+      auth: {
+        user: process.env.GMAIL_USER,
+        pass: process.env.GMAIL_PASSWORD,
+      },
     },
   },
 
@@ -54,6 +67,17 @@ export default defineNuxtConfig({
         token: process.env.CONTACT_FORM_TOKEN,
         useCdn: true,
         apiVersion: process.env.NUXT_SANITY_API_VERSION || '2024-03-15',
+      },
+    },
+    nodemailer: {
+      transport: {
+        host: 'smtp.gmail.com',
+        port: 465,
+        secure: true, // true for 465, false for other ports
+        auth: {
+          user: process.env.GMAIL_USER,
+          pass: process.env.GMAIL_PASSWORD,
+        },
       },
     },
   },
