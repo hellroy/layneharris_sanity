@@ -1,6 +1,5 @@
-import { createClient } from '@sanity/client'
-import nodemailer from 'nodemailer'
-import { eventHandler, readBody } from 'h3'
+const { createClient } = require('@sanity/client')
+const nodemailer = require('nodemailer')
 
 // Configure Sanity client
 const client = createClient({
@@ -11,10 +10,10 @@ const client = createClient({
   apiVersion: '2023-01-01', // Specify the API version
 })
 
-export default eventHandler(async (event) => {
+exports.handler = async (event, context) => {
   console.log('Function triggered')
 
-  if (event.node.req.method !== 'POST') {
+  if (event.httpMethod !== 'POST') {
     console.log('Method not allowed')
     return {
       statusCode: 405,
@@ -23,7 +22,7 @@ export default eventHandler(async (event) => {
   }
 
   try {
-    const body = await readBody(event)
+    const body = JSON.parse(event.body)
     console.log('Received body:', body)
 
     const { name, email, message } = body
@@ -76,4 +75,4 @@ export default eventHandler(async (event) => {
       body: JSON.stringify({ message: 'Failed to submit form', error: error.message, stack: error.stack })
     }
   }
-})
+}
