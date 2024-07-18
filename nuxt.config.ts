@@ -68,6 +68,7 @@ export default defineNuxtConfig({
         useCdn: true,
         apiVersion: process.env.NUXT_SANITY_API_VERSION || '2024-03-15',
       },
+      apiUrl: process.env.NODE_ENV === 'production' ? 'https://layneharris.com/.netlify/functions/submitContactForm' : 'http://localhost:3000/api/submitContactForm'
     },
     nodemailer: {
       transport: {
