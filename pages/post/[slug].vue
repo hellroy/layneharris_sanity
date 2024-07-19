@@ -15,7 +15,7 @@ const { data: post } = await useSanityQuery(query, {
     <div class="m-auto text-center px-4">
     <img
       v-if="post.coverImage"
-      class="post__cover w-full object-cover md:w-[750px] md:h-[500px] rounded-lg m-auto drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
+      class="post__cover w-full object-cover md:w-[750px] md:h-[750px] rounded-lg m-auto drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
       :src="urlFor(post.coverImage).width(1920).url()"
       alt="Cover image"
     />
