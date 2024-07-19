@@ -12,6 +12,10 @@ h3 {
     @apply text-3xl font-headings mt-6 mb-1 text-layneYellow !important;
   }
 
+  p {
+    @apply mb-4;
+  }
+
   .scrollable-element {
     overflow: auto !important;
     z-index: 1000;

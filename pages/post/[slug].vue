@@ -1,6 +1,6 @@
 <script setup>
 import { useRoute } from 'vue-router'
-import { PortableText } from '@portabletext/vue'
+import { PortableText  } from '@portabletext/vue'
 
 const route = useRoute()
 
@@ -8,6 +8,16 @@ const query = groq`*[ _type == "post" && slug.current == $slug][0]`
 const { data: post } = await useSanityQuery(query, {
   slug: route.params.slug,
 })
+
+const components = {
+  blocks: {
+    normal: (_, { slots }) => h('p', { class: 'sheep mb-2 text-8xl text-slate-500 bg-black' }, slots.default?.()),
+    h1: (_, { slots }) => h('h1', { class: 'text-laynePink' }, slots.default?.()),
+        // Ex. 2: rendering custom styles
+        customHeading: (_, { slots }) =>
+      h('h3', { class: 'text-lg text-primary text-purple-700' }, slots.default?.()),
+  },
+};
 </script>
 
 <template>
@@ -25,8 +35,8 @@ const { data: post } = await useSanityQuery(query, {
       <h1 class="post__title text-3xl md:text-5xl  font-headings text-layneYellow leading-tight mt-4 md:mt-8 mb-4 md:mb-6">{{ post.title }}</h1>
       <p class="post__excerpt font-sans text-white text-xl md:text-2xl leading-snug mt-0">{{ post.excerpt }}</p>
       <p class="post__date font-sans text-layneBlue font-semibold text-xs md:text-lg mt-4">{{ formatDate(post._createdAt) }}</p>
-      <div v-if="post.body" class="post__content font-sans text-white text-lg md:text-xl leading-relaxed mt-6 md:mt-12">
-        <PortableText :value="post.body" />
+      <div v-if="post.body" class="font-sans text-white text-lg md:text-xl leading-relaxed mt-6 md:mt-12">
+        <PortableText :value="post.body" :components={components} />
       </div>
     </div>
   </div>
@@ -35,11 +45,8 @@ const { data: post } = await useSanityQuery(query, {
 </template>
 
 <style scoped>
-.post__content blockquote {
-  @apply border-l-4 border-black pl-6 ml-8;
-}
+  p {
+    @apply mb-[2em];
+  }
 
-.post__content a {
-  @apply text-blue-600 no-underline;
-}
 </style>
