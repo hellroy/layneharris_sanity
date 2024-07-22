@@ -7,6 +7,11 @@ export default defineNuxtConfig({
     'nuxt-nodemailer'
   ],
 
+  image: {
+    provider: 'netlify',
+    format: ['webp']
+  },
+
   css: ['~/assets/css/tailwind.css', '~/assets/css/main.css'],
 
   postcss: {

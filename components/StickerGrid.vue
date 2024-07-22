@@ -8,7 +8,7 @@
       @mouseleave="hideInfoBox"
       @mousemove="updateInfoBoxPosition"
     >
-      <img  
+      <NuxtPicture  
         :src="sticker.sticker || 'https://via.placeholder.com/150'" 
         :alt="sticker.name" 
         sizes="40vw sm:50vw md:450px"
