@@ -38,7 +38,6 @@ module.exports = {
       fontFamily: {
         silkscreen: ['Silkscreen', 'sans-serif'],
         headings: ['Bebas Neue', 'sans-serif'],
-        cheeVariable: ['cheee-variable', 'sans-serif'],
         synthemesc: ["synthemesc", 'sans-serif'],
       },
     },

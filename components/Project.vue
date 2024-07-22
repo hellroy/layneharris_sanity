@@ -16,7 +16,6 @@ defineProps({
   <div class="group">
     <NuxtImg
       v-if="project.coverImage"
-      format="webp"
       class=" aspect-square border-t border-t-slate-400 rounded-lg group-hover:rotate-[3deg] transition-transform duration-300 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)] group-hover:drop-shadow-[0_200px_200px_rgba(255,255,0,255)] hover:"
       :src="urlFor(project.coverImage).width(500).height(500).url()"
       alt="Cover image"

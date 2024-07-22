@@ -12,7 +12,6 @@
         :src="sticker.sticker || 'https://via.placeholder.com/150'" 
         :alt="sticker.name" 
         sizes="40vw sm:50vw md:450px"
-        format="webp"
         class="max-w-[200px] md:max-w-[450px] h-auto"
         :style="`transform: rotate(${randomRotations[index]}deg)`"
       />

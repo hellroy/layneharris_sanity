@@ -15,7 +15,6 @@ const { data: project } = await useSanityQuery(query, {
     <div class="m-auto w-[75%]">
     <NuxtImg
       v-if="project.coverImage"
-      format="webp"
       class="project__cover w-full h-52 object-cover md:w-[750px] md:h-full m-auto rounded-lg drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
       :src="urlFor(project.coverImage).width(1920).url()"
       alt="Cover image"
