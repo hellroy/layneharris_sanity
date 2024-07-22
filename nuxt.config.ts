@@ -9,7 +9,8 @@ export default defineNuxtConfig({
 
   image: {
     provider: 'netlify',
-    format: ['webp']
+    format: ['webp'], 
+    domains: ['cdn.sanity.io'],
   },
 
   css: ['~/assets/css/tailwind.css', '~/assets/css/main.css'],
