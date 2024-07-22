@@ -13,7 +13,7 @@ const { data: project } = await useSanityQuery(query, {
 <template>
   <section v-if="project" class="project w-full my-4 mt-24 md:mt-0 md:my-16">
     <div class="m-auto w-[75%]">
-    <img
+    <NuxtImg
       v-if="project.coverImage"
       class="project__cover w-full h-52 object-cover md:w-[750px] md:h-full m-auto rounded-lg drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
       :src="urlFor(project.coverImage).width(1920).url()"

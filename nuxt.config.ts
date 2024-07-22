@@ -3,6 +3,7 @@ import { defineNuxtConfig } from 'nuxt/config'
 export default defineNuxtConfig({
   modules: [
     '@nuxtjs/sanity',
+    '@nuxt/image',
     'nuxt-nodemailer'
   ],
 
