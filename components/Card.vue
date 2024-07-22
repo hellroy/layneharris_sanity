@@ -8,7 +8,7 @@
         <NuxtLink
           class="flex flex-col md:flex-row p-4 py-8 md:p-12 relative text-layneYellow no-underline first:rounded-t last:rounded-b"
           :to="`/post/${post.slug.current}`">
-          <NuxtImg v-if="post.coverImage"
+          <img v-if="post.coverImage"
             class="card__cover border-t border-t-teal-200 w-full xl:w-auto md:h-[250px] xl:h-full object-cover m-auto rounded-lg drop-shadow-[0_5px_5px_rgba(230,245,39,.8)]"
             :src="urlFor(post.coverImage).width(500).height(300).url()" alt="Cover image" />
           <div v-else

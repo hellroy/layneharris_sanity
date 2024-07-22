@@ -14,7 +14,7 @@ defineProps({
     :to="`/project/${project.slug.current}`"
   >
   <div class="group">
-    <NuxtImg
+    <img
       v-if="project.coverImage"
       class=" aspect-square border-t border-t-slate-400 rounded-lg group-hover:rotate-[3deg] transition-transform duration-300 drop-shadow-[0_5px_5px_rgba(230,245,39,.8)] group-hover:drop-shadow-[0_200px_200px_rgba(255,255,0,255)] hover:"
       :src="urlFor(project.coverImage).width(500).height(500).url()"
