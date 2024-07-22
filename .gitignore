@@ -102,3 +102,4 @@ bower_components/
 
 # Local Netlify folder
 .netlify
+.env
