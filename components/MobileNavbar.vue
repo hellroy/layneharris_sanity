@@ -1,7 +1,7 @@
 <template>
-  <nav class="z-10 fixed font-silkscreen text-[1.5em] backdrop-blur-xl backdrop-saturate-100 backdrop">
+  <nav class="z-10 fixed font-silkscreen text-[5vw] backdrop-blur-xl backdrop-saturate-100 backdrop">
     <div class="flex justify-between items-center p-4">
-      <button @click="toggleMenu" class="hamburger text-layneYellow transition ease-in-out delay-150 duration-300">
+      <button @click="toggleMenu" class="hamburger text-layneYellow transition ease-in-out delay-150 duration-300 ">
         {{ menuOpen ? '✖' : '☰' }}
       </button>
     </div>
@@ -122,8 +122,12 @@ export default defineComponent({
     }
 
     const isActive = (item) => {
-      return route.path === `/${item.slug?.current}`
-    }
+  if (item.slug && item.slug.current) {
+    return route.path === `/${item.slug.current}`;
+  }
+  return route.path === '/' && item.name.toLowerCase() === 'home';
+}
+
 
     const goToLink = (item) => {
       router.push(getLink(item))
@@ -176,6 +180,7 @@ export default defineComponent({
 a {
   color: var(--layneYellow);
 }
+
 .hamburger {
   font-size: 24px;
   background: none;
@@ -190,10 +195,6 @@ a {
   filter: drop-shadow(2px 0 0px var(--laynePink));
 }
 
-.menu-item.active {
-  color: var(--laynePink);
-}
-
 .submenu,
 .sub-submenu {
   list-style: none;
@@ -206,4 +207,10 @@ a {
 .sub-submenu-item {
   font-size: .8em;
 }
+
+/* Active class styling */
+.active {
+  color: white !important; /* Change text color to white */
+}
 </style>
+
