@@ -26,10 +26,7 @@
   </div>
 </template>
 
-
-
 <script setup>
-import groq from 'groq'; 
 import { ref, computed, onMounted } from 'vue';
 import { useAsyncData } from '#app';
 
@@ -38,10 +35,7 @@ const generateRandomRotations = (length) => {
   return Array.from({ length }, () => (Math.random() - 0.5) * 30);
 };
 
-// Define the GROQ query to fetch stickers
-const stickersQuery = groq`*[_type == "sticker"] | order(name desc){_id, name, description, "sticker": sticker.asset->url}`;
-
-const { data: stickers, pending, error } = useAsyncData('stickers', () => $fetch('/api/stickers'));
+const { data: stickers, pending, error } = await useAsyncData('stickers', () => $fetch('/.netlify/functions/stickers'));
 
 const randomRotations = computed(() => generateRandomRotations(stickers.value.length));
 
@@ -73,9 +67,6 @@ window.addEventListener('resize', () => {
 });
 </script>
 
-
-
-
 <style scoped>
 .sticker-item {
   display: flex;
@@ -88,5 +79,3 @@ window.addEventListener('resize', () => {
   transition: opacity 0.2s;
 }
 </style>
-
-  

@@ -1,9 +1,18 @@
-// server/api/stickers.ts
-import { defineEventHandler } from 'h3';
-import { client } from '../../utils/sanity-client';
+const { client } = require('../../utils/sanity-client');
 
-export default defineEventHandler(async () => {
+exports.handler = async function(event, context) {
   const query = `*[_type == "sticker"] | order(name desc){_id, name, description, "sticker": sticker.asset->url}`;
-  const stickers = await client.fetch(query);
-  return stickers;
-});
+
+  try {
+    const stickers = await client.fetch(query);
+    return {
+      statusCode: 200,
+      body: JSON.stringify(stickers)
+    };
+  } catch (error) {
+    return {
+      statusCode: 500,
+      body: JSON.stringify({ error: 'Failed to fetch stickers' })
+    };
+  }
+};
