@@ -26,23 +26,42 @@
   </div>
 </template>
 
+
+
 <script setup>
-import { ref, computed, onMounted } from 'vue';
-import { useAsyncData } from '#app';
+import groq from 'groq'; 
+import { ref, onMounted, computed } from 'vue';
 
 // Function to generate a random rotation between -15 and 15 degrees
 const generateRandomRotations = (length) => {
   return Array.from({ length }, () => (Math.random() - 0.5) * 30);
 };
 
-const { data: stickers, pending, error } = await useAsyncData('stickers', () => $fetch('/.netlify/functions/stickers'));
+// Define the GROQ query to fetch stickers
+const stickersQuery = groq`*[_type == "sticker"] | order(name desc){_id, name, description, "sticker": sticker.asset->url}`;
 
-const randomRotations = computed(() => generateRandomRotations(stickers.value.length));
+const stickers = ref([]);
+const randomRotations = ref([]);
+const error = ref(null);
 
 const infoBoxVisible = ref(false);
 const infoBoxContent = ref('');
 const mouseX = ref(0);
 const mouseY = ref(0);
+
+onMounted(async () => {
+  try {
+    const { data } = await useSanityQuery(stickersQuery);
+    if (data && data._value) {
+      stickers.value = data._value;
+      randomRotations.value = generateRandomRotations(stickers.value.length);
+    } else {
+      error.value = 'No stickers found';
+    }
+  } catch (err) {
+    error.value = 'Failed to fetch stickers';
+  }
+});
 
 const showInfoBox = (content, event) => {
   infoBoxContent.value = content;
@@ -60,12 +79,16 @@ const updateInfoBoxPosition = (event) => {
 };
 
 // Detect mobile viewport
-const isMobile = ref(window.innerWidth <= 768);
+const isMobile = computed(() => {
+  return window.innerWidth <= 768;
+});
 
 window.addEventListener('resize', () => {
   isMobile.value = window.innerWidth <= 768;
 });
 </script>
+
+
 
 <style scoped>
 .sticker-item {
@@ -79,3 +102,5 @@ window.addEventListener('resize', () => {
   transition: opacity 0.2s;
 }
 </style>
+
+  
