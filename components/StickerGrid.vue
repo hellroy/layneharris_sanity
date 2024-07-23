@@ -26,42 +26,31 @@
   </div>
 </template>
 
-
-
 <script setup>
-import groq from 'groq'; 
-import { ref, onMounted, computed } from 'vue';
+import { ref, computed } from 'vue';
+import { useAsyncData } from '#app';
 
 // Function to generate a random rotation between -15 and 15 degrees
 const generateRandomRotations = (length) => {
   return Array.from({ length }, () => (Math.random() - 0.5) * 30);
 };
 
-// Define the GROQ query to fetch stickers
-const stickersQuery = groq`*[_type == "sticker"] | order(name desc){_id, name, description, "sticker": sticker.asset->url}`;
+// Fetch the stickers data
+const { data: stickers, pending, error } = await useAsyncData('stickers', async () => {
+  const response = await fetch('https://layneharris.com/.netlify/functions/stickers');
+  const data = await response.json();
+  //console.log(data); // Log the data to verify its structure
+  return data;
+});
 
-const stickers = ref([]);
-const randomRotations = ref([]);
-const error = ref(null);
+
+// Generate random rotations based on the length of the stickers array
+const randomRotations = computed(() => generateRandomRotations(stickers.value.length));
 
 const infoBoxVisible = ref(false);
 const infoBoxContent = ref('');
 const mouseX = ref(0);
 const mouseY = ref(0);
-
-onMounted(async () => {
-  try {
-    const { data } = await useSanityQuery(stickersQuery);
-    if (data && data._value) {
-      stickers.value = data._value;
-      randomRotations.value = generateRandomRotations(stickers.value.length);
-    } else {
-      error.value = 'No stickers found';
-    }
-  } catch (err) {
-    error.value = 'Failed to fetch stickers';
-  }
-});
 
 const showInfoBox = (content, event) => {
   infoBoxContent.value = content;
@@ -79,16 +68,12 @@ const updateInfoBoxPosition = (event) => {
 };
 
 // Detect mobile viewport
-const isMobile = computed(() => {
-  return window.innerWidth <= 768;
-});
+const isMobile = ref(window.innerWidth <= 768);
 
 window.addEventListener('resize', () => {
   isMobile.value = window.innerWidth <= 768;
 });
 </script>
-
-
 
 <style scoped>
 .sticker-item {
@@ -102,5 +87,3 @@ window.addEventListener('resize', () => {
   transition: opacity 0.2s;
 }
 </style>
-
-  
