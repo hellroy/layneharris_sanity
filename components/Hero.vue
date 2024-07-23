@@ -1,14 +1,18 @@
 <template>
-  <div class="m-auto md:w-full text-center h-[100vh] -mt-20 md:-mt-24 -z-20 border-b-layneYellow border-b-2" v-if="hero">
-    <div class="h-full stripe-4 relative flex flex-col md:flex-row justify-center items-center" >
-      <div class="relative flex flex-col md:mt-[12vh] md:flex-row space-y-4 md:space-y-0 md:space-x-4 py-24">
-        <StickerGrid/>
+  <div class="m-auto md:w-full text-center h-screen -mt-20 md:-mt-24 -z-20 border-b-layneYellow border-b-2"
+    v-if="hero">
+    <div class="h-screen stripe-4 relative flex flex-col md:flex-row justify-center items-center">
+      <div class="relative flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-4 py-24 md:max-h-[106vh] overflow-visible">
+        <StickerGrid />
       </div>
-      <div class="absolute md:inset-0 flex md:justify-center md:items-center z-1 pointer-events-none">
-        <div class="gravity font-synthemesc text-layneYellow text-[12vh] md:text-[20vh] lg:text-[30vh]  drop-shadow-hard text-left -mt-[60vw] -min-mt-20 md:-mt-0 "  >
-          <div class="mt-[5vw] -mb-[10vw]">LAYNE</div>
-          <div class="-mb-[10vw]">HARRIS</div>
-          <div class="text-white">.COM</div>
+      <div class="absolute flex md:justify-center md:items-center z-1 pointer-events-none">
+        <div
+          class="font-synthemesc text-layneYellow  drop-shadow-hard text-left -min-mt-20 md:-mt-0  ">
+          <div class="flex flex-col gap-0 h-[80%] text-[30vw] lg:text-[1700%] leading-snug ">
+            <div class="m-auto -my-5" >LAYNE</div>
+            <div class="m-auto  -my-5" >HARRIS</div>
+            <div class="m-auto -my-5">.COM</div>
+          </div>
         </div>
       </div>
     </div>
@@ -66,20 +70,6 @@ onMounted(() => {
 
   to {
     background-position: 100vw 0vw;
-  }
-}
-
-.gravity {
-  animation: gravityAnimation 3s infinite alternate;
-}
-
-@keyframes gravityAnimation {
-  from {
-    font-variation-settings: 'YEST' 0, 'GRVT' -100;
-  }
-
-  to {
-    font-variation-settings: 'YEST' 0, 'GRVT' 1000;
   }
 }
 </style>

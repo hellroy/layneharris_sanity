@@ -1,4 +1,5 @@
 <template>
+  <NuxtLoadingIndicator />
   <div class="flex flex-col min-h-screen">
     <!-- Navbar and Search components -->
     <Navbar />
