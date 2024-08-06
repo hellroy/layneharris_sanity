@@ -1,0 +1,15 @@
+/* assets/css/transitions.css */
+.page-enter-active, .page-leave-active {
+    transition: opacity 0.5s;
+  }
+  .page-enter, .page-leave-to /* .page-leave-active in <2.1.8 */ {
+    opacity: 0;
+  }
+  
+  .layout-enter-active, .layout-leave-active {
+    transition: opacity 0.5s;
+  }
+  .layout-enter, .layout-leave-to /* .layout-leave-active in <2.1.8 */ {
+    opacity: 0;
+  }
+  

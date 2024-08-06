@@ -16,8 +16,13 @@
             @click="handleClick(item)"
             :class="['menu-item', getItemClass(item.type), { 'active': isActive(item), 'has-children': item.children && item.children.length }]"
           >
-            <span v-if="!item.slug">{{ item.name }}</span>
-            <NuxtLink v-else :to="getLink(item)" @click="closeMenu" :class="{ 'active': isActive(item) }">{{ item.name }}</NuxtLink>
+            <span v-if="!item.slug && !item.url">{{ item.name }}</span>
+            <template v-else-if="item.destination === 'url'">
+              <a :href="getLink(item)" target="_blank" rel="noopener noreferrer" :class="{ 'active': isActive(item) }">{{ item.name }}</a>
+            </template>
+            <template v-else>
+              <NuxtLink :to="getLink(item)" @click="closeMenu" :class="{ 'active': isActive(item) }">{{ item.name }}</NuxtLink>
+            </template>
           </div>
           <ul v-if="item.children && item.children.length" class="submenu w-full">
             <li v-for="subItem in item.children" :key="subItem._id" class="submenu-item w-full">
@@ -25,12 +30,22 @@
                 @click="handleClick(subItem)"
                 :class="['menu-item', getItemClass(subItem.type), { 'active': isActive(subItem), 'has-children': subItem.children && subItem.children.length }]"
               >
-                <span v-if="!subItem.slug">{{ subItem.name }}</span>
-                <NuxtLink v-else :to="getLink(subItem)" @click="closeMenu" :class="{ 'active': isActive(subItem) }">{{ subItem.name }}</NuxtLink>
+                <span v-if="!subItem.slug && !subItem.url">{{ subItem.name }}</span>
+                <template v-else-if="subItem.destination === 'url'">
+                  <a :href="getLink(subItem)" target="_blank" rel="noopener noreferrer" :class="{ 'active': isActive(subItem) }">{{ subItem.name }}</a>
+                </template>
+                <template v-else>
+                  <NuxtLink :to="getLink(subItem)" @click="closeMenu" :class="{ 'active': isActive(subItem) }">{{ subItem.name }}</NuxtLink>
+                </template>
               </div>
               <ul v-if="subItem.children && subItem.children.length" class="sub-submenu w-full">
                 <li v-for="subSubItem in subItem.children" :key="subSubItem._id" class="sub-submenu-item w-full text-layneYellow">
-                  <NuxtLink :to="getLink(subSubItem)" @click="closeMenu" :class="{ 'active': isActive(subSubItem) }">{{ subSubItem.name }}</NuxtLink>
+                  <template v-if="subSubItem.destination === 'url'">
+                    <a :href="getLink(subSubItem)" target="_blank" rel="noopener noreferrer" :class="{ 'active': isActive(subSubItem) }">{{ subSubItem.name }}</a>
+                  </template>
+                  <template v-else>
+                    <NuxtLink :to="getLink(subSubItem)" @click="closeMenu" :class="{ 'active': isActive(subSubItem) }">{{ subSubItem.name }}</NuxtLink>
+                  </template>
                 </li>
               </ul>
             </li>
@@ -40,6 +55,8 @@
     </div>
   </nav>
 </template>
+
+
 
 <script>
 import { defineComponent, ref, onMounted, computed } from 'vue'
@@ -68,6 +85,7 @@ export default defineComponent({
         order,
         parent,
         type,
+        destination,
         "children": *[_type == "navType" && references(^._id)] | order(order asc) {
           _id,
           name,
@@ -77,6 +95,7 @@ export default defineComponent({
           order,
           parent,
           type,
+          destination,
           "children": *[_type == "navType" && references(^._id)] | order(order asc) {
             _id,
             name,
@@ -85,7 +104,8 @@ export default defineComponent({
             url,
             order,
             parent,
-            type
+            type,
+            destination
           }
         }
       }`
@@ -106,10 +126,8 @@ export default defineComponent({
     })
 
     const getLink = (item) => {
-      if (item.url) return item.url
-      if (item.slug && item.slug.current) {
-        return `/${item.slug.current}`
-      }
+      if (item.destination === 'url') return item.url
+      if (item.destination === 'slug' && item.slug && item.slug.current) return `/${item.slug.current}`
       return '#'
     }
 
@@ -122,12 +140,11 @@ export default defineComponent({
     }
 
     const isActive = (item) => {
-  if (item.slug && item.slug.current) {
-    return route.path === `/${item.slug.current}`;
-  }
-  return route.path === '/' && item.name.toLowerCase() === 'home';
-}
-
+      if (item.destination === 'slug' && item.slug && item.slug.current) {
+        return route.path === `/${item.slug.current}`;
+      }
+      return route.path === '/' && item.name.toLowerCase() === 'home';
+    }
 
     const goToLink = (item) => {
       router.push(getLink(item))
@@ -149,9 +166,9 @@ export default defineComponent({
 
     const handleClick = (item) => {
       console.log(`Clicked item: ${item.name}, Type: ${item.type}, Has children: ${item.children && item.children.length > 0}`)
-      if (!item.slug && item.children && item.children.length > 0) {
+      if (item.destination !== 'url' && item.children && item.children.length > 0) {
         console.log(`Sub-subnav items for ${item.name} are now visible.`)
-      } else if (item.slug) {
+      } else {
         goToLink(item)
       }
     }
@@ -174,7 +191,10 @@ export default defineComponent({
     }
   }
 })
+
+
 </script>
+
 
 <style scoped>
 a {

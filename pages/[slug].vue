@@ -1,5 +1,5 @@
 <template>
-    <div class="m-auto text-center text-white font-sans w-[75%] mt-24 md:mt-0" v-if="page">
+    <div class="m-auto text-center text-white font-sans w-[75%] mt-24 md:mt-0 min-h-[100dvh]" v-if="page">
       <div class="font-headings text-layneYellow text-4xl md:text-[4vw] py-4">{{ page.title }}</div>
       <div class="text-left md:text-[1.6rem] pb-8">
       <PortableText :value="page.content"/>

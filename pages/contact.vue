@@ -1,5 +1,5 @@
 <template>
-    <div class="m-auto p-4 font-silkscreen mt-24">
+    <div class="m-auto p-4 font-silkscreen mt-24 min-h-[100dvh]">
         <div class="text-center font-headings text-layneYellow text-4xl">Contact me</div>
         <div class="bg-transparent m-auto mt-8 rounded-md xl:max-w-[40%] drop-shadow-[0_5px_5px_rgba(230,245,39,.8)] border text-white ">
             <div class="m-auto p-4">
